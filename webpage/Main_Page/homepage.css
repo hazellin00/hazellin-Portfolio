@@ -746,34 +746,121 @@ a {
 }
 
 /* ========== Responsive ========== */
+
+/* 中尺寸螢幕（平板） */
 @media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-    padding: 4.5rem 1.5rem 2.5rem;
+  /* Journey 區塊上下改成直排 */
+  .journey-section {
+    grid-template-columns: 1fr;
+    padding: 2.4rem 6vw;
   }
 
-  .right_image {
-    max-width: 100%;
+  .journey-carousel {
+    margin-top: 1.5rem;
   }
 }
 
+/* 手機版（≤ 768px） */
 @media (max-width: 768px) {
+  body {
+    margin: 0;
+  }
+
+  /* Header：logo 獨占一行，nav 在下面可換行 */
   .site-header {
-    padding-inline: 1.5rem;
+    padding: 0.8rem 1.2rem;
+    flex-wrap: wrap;
+    row-gap: 0.4rem;
+  }
+
+  .logo {
+    flex-basis: 100%;
+    margin-bottom: 0.2rem;
   }
 
   .main-nav {
-    gap: 1rem;
-    font-size: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.8rem;
+    font-size: 0.9rem;
   }
 
-  .hero-card {
-    padding: 2rem 1.5rem 2.3rem;
+  /* Hero 區：上方間距縮小、字體變小一點 */
+  .hero {
+    max-width: 100%;
+    margin: 90px auto 0;
+    padding: 0 1.4rem 2rem;
   }
 
+  .hero-title {
+    font-size: 1.7rem;
+    margin-bottom: 1.1rem;
+  }
 
-  .expertise-grid {
+  .hero-subtitle {
+    margin-top: 1.6rem;
+    margin-bottom: 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  .social-row {
+    font-size: 0.9rem;
+  }
+
+  /* AI highlight 卡片變窄一點，改成直向排版 */
+  .ai-highlight {
+    margin: 1.6rem 1rem 2.4rem;
+    padding: 1.4rem 1.4rem 1.8rem;
+  }
+
+  .skills-interactive {
     grid-template-columns: 1fr;
-    gap: 1.75rem;
+    gap: 1rem;
+  }
+
+  .skills-tabs {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .skills-panel-wrapper {
+    margin-top: 0.5rem;
+  }
+
+  /* Journey 區：左右 padding 變小、標題不要離上面太遠 */
+  .journey-section {
+    padding: 2.2rem 1.5rem 2.6rem;
+    gap: 2rem;
+  }
+
+  .journey-title {
+    margin: 0 0 1.2rem;
+  }
+
+  .journey-photo {
+    height: 220px;
+  }
+
+  /* Industry 區：上下 padding 收窄，標題縮小 */
+  .industry-scroll-section {
+    padding: 2.5rem 0 3rem;
+  }
+
+  .industry-scroll-title {
+    font-size: 2rem;
+    padding: 0 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .industry-scroll-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* Footer 字體小一點、左右 padding 縮小 */
+  .site-footer {
+    padding: 1rem 1.5rem 1.4rem;
+    font-size: 0.75rem;
   }
 }
