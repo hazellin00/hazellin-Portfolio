@@ -1,0 +1,695 @@
+/* =========================
+   Base & Typography
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1;
+  font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  color: #0f172a;
+  background: radial-gradient(
+    circle at top left,
+    #e2f0ff,
+    #f5f0ff 45%,
+    #fdfcff 80%
+  );
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Libre Bodoni", "Times New Roman", serif;
+  color: #020617;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #6366f1;
+  margin: 0 0 0.4rem;
+}
+
+/* =========================
+   Header
+========================= */
+.site-header {
+  position: fixed;          /* 原本 sticky 改成 fixed */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 8vw;
+}
+
+.logo {
+  font-family: "Cutive Mono", monospace;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.main-nav {
+  font-family: "Cutive Mono", monospace;
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+.main-nav a {
+  position: relative;
+  padding-bottom: 0.1rem;
+  text-decoration: none;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: red;
+  transition: width 0.8s ease;
+}
+
+.main-nav a:hover::after {
+  background: #c15b28;
+  width: 100%;
+}
+
+/* =========================
+   Layout
+========================= */
+.case-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3.5rem;
+}
+
+/* =========================
+   Buttons
+========================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease,
+    border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn.primary {
+  background-image: linear-gradient(135deg, #5b8dff, #a855f7);
+  color: #f9fafb;
+  box-shadow: 0 18px 45px rgba(148, 163, 184, 0.6);
+}
+
+.btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 55px rgba(129, 140, 248, 0.9);
+}
+
+.btn.ghost {
+  background: #ffffff;
+  color: #0f172a;
+  border-color: rgba(148, 163, 184, 0.7);
+}
+
+.btn.ghost:hover {
+  background: #f3f4ff;
+}
+
+/* =========================
+   Hero
+========================= */
+.case-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 3.5fr);
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.case-hero-media img {
+  width: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow: 0 22px 55px rgba(148, 163, 184, 0.7);
+}
+
+.case-hero-text h1 {
+  margin: 0.4rem 0 0.7rem;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+}
+
+.case-subtitle {
+  margin: 0 0 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.breadcrumb {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin: 0 0 0.4rem;
+}
+
+.crumb-sep {
+  margin: 0 0.25rem;
+}
+
+.crumb a {
+  text-decoration: underline;
+}
+
+.path-pill {
+  display: inline-flex;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  background: #eef2ff;
+  border: 1px solid rgba(129, 140, 248, 0.8);
+}
+
+.case-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1.5rem;
+  margin: 1rem 0 1.3rem;
+  font-size: 0.86rem;
+}
+
+.case-meta dt {
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.case-meta dd {
+  margin: 0.1rem 0 0;
+  color: #6b7280;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+/* =========================
+   Stats
+========================= */
+.case-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2.8rem;
+}
+
+.stat-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1rem 1.1rem 1.2rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  box-shadow: 0 18px 45px rgba(148, 163, 184, 0.6);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #6b7280;
+}
+
+.stat-number {
+  display: block;
+  margin: 0.25rem 0 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #6b7280;
+}
+
+/* =========================
+   Overview + My role
+========================= */
+.case-body.two-column {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 2fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.case-body h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.case-body h3 {
+  margin-top: 1.4rem;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+
+.case-body p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  line-height: 2rem;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.checklist li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  color: #6366f1;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tag-list li {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: #eef2ff;
+  border: 1px solid rgba(129, 140, 248, 0.8);
+}
+
+/* =========================
+   Process
+========================= */
+.case-process {
+  margin-bottom: 3rem;
+}
+
+.case-process h2 {
+  margin: 0.2rem 0 1.4rem;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.4rem;
+}
+
+.step {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1rem 1.1rem 1.2rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  box-shadow: 0 18px 45px rgba(148, 163, 184, 0.6);
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background-image: linear-gradient(135deg, #5b8dff, #a855f7);
+  color: #f9fafb;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.step h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+}
+
+.step p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #4b5563;
+}
+
+/* =========================
+   Outcomes
+========================= */
+.case-outcomes {
+  margin-bottom: 3rem;
+}
+
+.case-outcomes h2 {
+  margin: 0.2rem 0 1.4rem;
+}
+
+.outcome-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.4rem;
+}
+
+.outcome-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.1rem 1.2rem 1.3rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  box-shadow: 0 18px 45px rgba(148, 163, 184, 0.6);
+}
+
+.outcome-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.outcome-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+/* =========================
+   File embed section
+========================= */
+.case-embed {
+  margin-bottom: 3rem;
+}
+
+.case-embed-intro {
+  margin: 2rem;
+  font-size: 0.92rem;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.case-embed-intro2 {
+  margin: 2rem;
+  font-size: 1.2rem;
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+
+.embed-wrapper embed {
+  width: 100%;
+  height: 650px; 
+   /* 直式文件可以高一點 */
+}
+
+.frame{
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+/* 手機把高度縮小一點 */
+@media (max-width: 768px) {
+  .embed-wrapper embed {
+    height: 480px;
+  }
+}
+
+
+/* =========================
+   Gallery (horizontal scroll)
+========================= */
+.case-gallery {
+  margin-bottom: 3rem;
+}
+
+.case-gallery h2 {
+  margin: 0.2rem 0 1.3rem;
+}
+
+/* 共用：橫向滑動 */
+.gallery-grid {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x mandatory;
+}
+
+/* 預設（手機 / 窄螢幕）：一次看一頁 */
+.gallery-grid figure {
+  flex: 0 0 80vw;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+/* 較寬螢幕：一次看兩頁 */
+@media (min-width: 900px) {
+  .gallery-grid figure {
+    flex: 0 0 calc(50% - 0.75rem);
+    max-width: calc(50% - 0.75rem);
+  }
+}
+
+.zoom-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(148, 163, 184, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zoom-card img {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+.zoom-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 24px 60px rgba(129, 140, 248, 0.9);
+}
+
+/* =========================
+   Lightbox（如果不用可以整段刪掉）
+========================= */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: min(90vw, 1100px);
+  max-height: 90vh;
+  margin: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.6);
+  z-index: 41;
+}
+
+.lightbox-content img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #f9fafb;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  border: none;
+  background: rgba(15, 23, 42, 0.7);
+  color: #f9fafb;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* =========================
+   Behind the scenes photos
+========================= */
+.case-photos {
+  margin-top: 2.5rem;
+}
+
+.case-photos h2 {
+  margin: 0 0 1.2rem;
+}
+
+.photo-row {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.photo-row figure {
+  flex: 1 1 0;
+  margin: 0;
+}
+
+.photo-row img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* 滿版版本：整個區塊拉成 100vw */
+.case-photos-full {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  padding: 2rem 4vw 2.5rem;
+}
+
+.case-photos-full h2,
+.case-photos-full .photo-row {
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================
+   CTA
+========================= */
+.case-cta {
+  margin-bottom: 2.5rem;
+}
+
+.case-cta-inner {
+  background: linear-gradient(135deg, #5b8dff, #a855f7);
+  border-radius: 24px;
+  padding: 1.8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.4rem;
+  color: #f9fafb;
+  box-shadow: 0 22px 55px rgba(129, 140, 248, 0.9);
+}
+
+.case-cta-inner h2 {
+  margin: 0 0 0.4rem;
+  color: #f9fafb;
+}
+
+.case-cta-inner p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.case-cta-actions {
+  display: flex;
+  gap: 0.8rem;
+}
+
+/* =========================
+   Footer
+========================= */
+.site-footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.6);
+  padding: 1.3rem 8vw 1.8rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+  text-align: center;
+  background: #f9fafb;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 900px) {
+  .case-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .case-body.two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .case-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding-inline: 1.5rem;
+  }
+
+  .case-page {
+    padding-inline: 1.25rem;
+  }
+
+  .photo-row {
+    flex-direction: column;
+  }
+}

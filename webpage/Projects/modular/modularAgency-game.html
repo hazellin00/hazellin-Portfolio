@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modular Agency / X-Legend Game company</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="./modularAgency-game.css" />
+</head>
+<body>
+  <!-- 頂部導覽 -->
+    <header class="site-header">
+      <a href="/webpage/Main_Page/index.html" class="logo">Hazellin</a>
+      <nav class="main-nav">
+        <a href="/webpage/Main_Page/index.html">Home</a>
+        <a href="/webpage/Main_Page/about.html">About Me</a>
+        <a href="/webpage/Main_Page/Portfolio homapage.html">Projects</a>
+        <a href="/webpage/Main_Page/case homepage.html">Cases</a>
+        <!-- <a href="">Blog</a> -->
+      </nav>
+    </header>
+
+  <main class="case-page">
+    <!-- Hero 區：專案關鍵資訊 -->
+    <section class="case-hero">
+      <div class="case-hero-media">
+        <!-- 換成這個專案的 hero 圖（例如簡報封面） -->
+        <img
+          src="/images/game modular.png"
+          alt="Preview of X-Legend Game"
+        />
+      </div>
+
+      <div class="case-hero-text">
+        <p class="breadcrumb">
+          <span class="crumb"><a href="./cases.html">Cases</a></span>
+          <span class="crumb-sep">/</span>
+          <span class="crumb">Portfolio &amp; Projects</span>
+        </p>
+
+        <span class="path-pill">X-Legend Game</span>
+
+        <!-- 專案標題（沿用原本名稱） -->
+        <h1>Modular Agency B2B Marketing</h1>
+
+        <!-- 短描述：僅描述檔案本身，不延伸新的故事 -->
+        <p class="case-subtitle">
+          Led production support for X-Legend Game Company’s digital campaign at Modular Agency, a startup marketing agency—crafting feature-focused video assets and ensuring smooth execution under <strong>a fast-paced, international workflow.</strong>
+        </p>
+
+        <!-- Meta 資訊：只填入舊頁面確定有的內容，其餘留給自己補 -->
+        <dl class="case-meta">
+          <div>
+            <dt>Client / Partner</dt>
+            <dd>Modular Agency &amp; X-Legend Game Company</dd>
+          </div>
+          <div>
+            <dt>Deliverable</dt>
+            <dd>Game launch campaign deck &amp; feature video</dd>
+          </div>
+          <div>
+            <dt>Location</dt>
+            <dd>Taipei, Taiwan</dd>
+          </div>
+          <div>
+            <dt>When</dt>
+            <dd>2022</dd>
+          </div>
+        </dl>
+
+        <div class="hero-actions">
+          <a href="/webpage/Main_Page/Portfolio homepage.html" class="btn ghost">← Back to Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 檔案嵌入區：放 Notion / PDF / Figma 等 -->
+    <section class="case-embed">
+      <p class="eyebrow">Deliverable</p>
+      <h2>X-Legend Game launch campaign deckPlan</h2>
+      <p class="case-embed-intro">
+        The core of this project is a structured campaign plan and creative deck
+        for X-Legend Game Company, outlining key messages, visual direction, and
+        video concepts for a feature-focused game launch.
+        As part of Modular Agency, a startup marketing agency, I supported the team
+        in turning strategy and ideas into a clear, producible campaign.
+      </p>
+
+   <section class="case-gallery">
+  <!-- <p class="eyebrow">Gallery</p> -->
+  <!-- <h2>Result</h2> -->
+  <div class="gallery-grid">
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/mi9AJhw-a0M?si=HqhGlOF9pFE7f7k2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="frame"></iframe>
+  </div>
+
+      <div class="case-embed-intro2">
+In this project I coordinated production logistics, aligned the shoot and
+        deliverables with the game’s marketing goals, and collaborated with both
+        local and international teammates – sharpening my communication,
+        problem-solving, and on-the-ground project management skills.
+    </div>
+
+      <div class="embed-wrapper">
+    <embed
+    src="/Modular/X-Legend Rundown (7_21).pdf" width="100%" height="480">
+    </embed>
+</div>
+<p style="width: 100px; height: 50px;"></p>
+</main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Hazellin. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+  </script>
+</body>
+</html>

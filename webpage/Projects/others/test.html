@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>How I Got Here – Card Stack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- 字型跟你主站一致 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@500;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ========= Global ========= */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        color: #111827;
+        background: radial-gradient(
+          circle at top left,
+          #e5f0ff,
+          #fdf9ff 45%,
+          #ffffff 80%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem 1.5rem;
+      }
+
+      main {
+        width: 100%;
+        max-width: 1200px;
+      }
+
+      h1 {
+        font-family: "Libre Bodoni", serif;
+        font-size: clamp(2rem, 3vw, 2.6rem);
+        text-align: center;
+        margin: 0 0 2.5rem;
+      }
+
+      /* ========= Visual Electric style stack ========= */
+
+      .ve-hero {
+        display: flex;
+        justify-content: center;
+      }
+
+      .ve-stack {
+        position: relative;
+        width: min(960px, 96vw);
+        aspect-ratio: 3 / 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        perspective: 1600px;
+      }
+
+      /* 後面兩張彩色卡片，各是獨立一層 */
+      .ve-layer {
+        position: absolute;
+        inset: 0;
+        border-radius: 40px;
+        box-shadow: 0 26px 70px rgba(15, 23, 42, 0.35);
+        transition: transform 280ms ease, box-shadow 280ms ease,
+          filter 280ms ease, opacity 280ms ease;
+      }
+
+      .ve-layer--left {
+        background: #a78bfa;
+        transform: translateX(-160px) scale(0.9) rotateY(10deg);
+        opacity: 0.9;
+        z-index: 0;
+      }
+
+      .ve-layer--right {
+        background: #fdba74;
+        transform: translateX(160px) scale(0.9) rotateY(-10deg);
+        opacity: 0.9;
+        z-index: 0;
+      }
+
+      /* 中間的「相片卡片們」會在這個 carousel 容器裡輪播 */
+      .ve-carousel {
+        position: relative;
+        width: min(780px, 88%);
+        aspect-ratio: 3 / 2;
+        border-radius: 32px;
+        z-index: 2; /* 在彩色背景之上 */
+      }
+
+      .ve-card {
+        position: absolute;
+        inset: 0;
+        border-radius: 32px;
+        overflow: hidden;
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
+        opacity: 0;
+        transform: translateZ(0) scale(0.9);
+        transition: transform 500ms ease, opacity 500ms ease,
+          box-shadow 500ms ease;
+        pointer-events: none;
+      }
+
+      .ve-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* 中間正在播放的那張 */
+      .ve-card.is-active {
+        opacity: 1;
+        transform: translateZ(40px) scale(1.02);
+        box-shadow: 0 30px 80px rgba(15, 23, 42, 0.45);
+        z-index: 3;
+        pointer-events: auto;
+      }
+
+      /* 左右兩側準備下一張／上一張的樣式 */
+      .ve-card.is-prev {
+        opacity: 0.4;
+        transform: translateX(-140px) scale(0.92) rotateY(6deg);
+        z-index: 2;
+      }
+
+      .ve-card.is-next {
+        opacity: 0.4;
+        transform: translateX(140px) scale(0.92) rotateY(-6deg);
+        z-index: 2;
+      }
+
+      /* hover 整塊時多一點浮起感 */
+      .ve-stack:hover .ve-card.is-active {
+        transform: translateY(-6px) translateZ(60px) scale(1.04);
+      }
+
+      .ve-stack:hover .ve-layer--left {
+        transform: translateX(-190px) scale(0.9) rotateY(13deg)
+          translateY(-6px);
+      }
+
+      .ve-stack:hover .ve-layer--right {
+        transform: translateX(190px) scale(0.9) rotateY(-13deg)
+          translateY(-6px);
+      }
+
+      /* RWD 手機調整 */
+      @media (max-width: 768px) {
+        body {
+          padding: 3rem 1rem;
+        }
+
+        .ve-stack {
+          width: 100%;
+          aspect-ratio: 4 / 3;
+        }
+
+        .ve-layer--left {
+          transform: translateX(-80px) scale(0.9) rotateY(8deg);
+        }
+
+        .ve-layer--right {
+          transform: translateX(80px) scale(0.9) rotateY(-8deg);
+        }
+
+        .ve-card.is-prev {
+          transform: translateX(-80px) scale(0.9) rotateY(4deg);
+        }
+
+        .ve-card.is-next {
+          transform: translateX(80px) scale(0.9) rotateY(-4deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1>How I Got Here</h1>
+
+      <section class="ve-hero">
+        <div class="ve-stack">
+          <!-- 後面兩張彩色卡片 -->
+          <div class="ve-layer ve-layer--left"></div>
+          <div class="ve-layer ve-layer--right"></div>
+
+          <!-- 中間會輪播的照片卡片們 -->
+          <div class="ve-carousel">
+            <!-- 卡片 1 -->
+            <div class="ve-card is-active">
+              <img src="../images/聖誕節德國.jpg" alt="Christmas in Germany" />
+            </div>
+
+            <!-- 卡片 2 -->
+            <div class="ve-card">
+              <img src="../images/host.png" alt="Hosting an event" />
+            </div>
+
+            <!-- 卡片 3 -->
+            <div class="ve-card">
+              <img src="../images/芬蘭交換.jpg" alt="Exchange in Finland" />
+            </div>
+
+            <!-- 如果之後要再加卡片，照這個格式多複製幾個 ve-card 即可 -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // 簡單的自動輪播：每 3.5 秒換一張
+      const cards = document.querySelectorAll(".ve-card");
+      let current = 0;
+
+      function updateCards() {
+        const total = cards.length;
+
+        cards.forEach((card, index) => {
+          card.classList.remove("is-active", "is-prev", "is-next");
+
+          if (index === current) {
+            card.classList.add("is-active");
+          } else if (index === (current - 1 + total) % total) {
+            card.classList.add("is-prev");
+          } else if (index === (current + 1) % total) {
+            card.classList.add("is-next");
+          }
+        });
+      }
+
+      // 初始狀態
+      updateCards();
+
+      // 自動輪播
+      setInterval(() => {
+        current = (current + 1) % cards.length;
+        updateCards();
+      }, 3500);
+    </script>
+  </body>
+</html>

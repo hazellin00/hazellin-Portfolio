@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blog — Hazellin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./blog_mainpage.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">Hazellin</div>
+    <nav class="main-nav">
+      <a href="./index.html">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./cases.html">Cases</a>
+      <a href="./blog.html" class="active">Blog</a>
+    </nav>
+  </header>
+
+  <main class="blog-page">
+<main class="blog-page">
+  <!-- Collage hero section -->
+  <section class="blog-collage">
+    <!-- 左邊文字 -->
+    <div class="collage-copy">
+      <p class="eyebrow">Blog</p>
+      <h1 class="collage-title">About the stories I write.</h1>
+
+      <p class="collage-text">
+        I use this space to document the thinking behind my work – the backstage
+        decisions in <strong>marketing, logistics, and AI-driven growth</strong>
+        that don’t always fit into a case study.
+      </p>
+      <p class="collage-text small">
+        Short reflections, longer essays, and notes I want future teammates
+        (and my future self) to be able to reuse.
+      </p>
+    </div>
+
+    <!-- 右邊 2×2 拼貼圖片（換成你自己的路徑） -->
+    <div class="collage-grid">
+      <!-- 1 & 2 可以都放臉部照，做出切成兩半的感覺 -->
+      <img src="./images/blog-face-left.jpg"  alt="Portrait left">
+      <img src="./images/blog-face-right.jpg" alt="Portrait right">
+      <img src="./images/blog-hands.jpg"      alt="Hands">
+      <img src="./images/blog-neck.jpg"       alt="Neck detail">
+    </div>
+  </section>
+
+    <!-- ============= FEATURED POST 區（像大標＋一張大圖） ============= -->
+    <section class="featured-block">
+      <div class="featured-text">
+        <p class="featured-label">Featured story</p>
+        <h2>Amplifying the Stage – Behind the Scenes with FCU Musical Theatre</h2>
+        <p class="featured-excerpt">
+          A look at how timing, communication and on-the-ground logistics kept a
+          student musical running smoothly — and what it taught me about event design.
+        </p>
+        <p class="featured-meta">Behind the Scenes · Logistics · 5 min read</p>
+        <a href="./blog-fcu-musical.html" class="text-link">Read the story →</a>
+      </div>
+      <div class="featured-image">
+        <img src="./images/blog-portrait-1.jpg" alt="FCU Musical Theatre backstage" />
+      </div>
+    </section>
+
+    <!-- ============= PORTFOLIO STYLE POSTS ============= -->
+    <section class="posts-block">
+      <h2 class="section-title">Portfolio of stories</h2>
+
+      <div class="section-intro-row">
+        <p>
+          The best way to see how I think is to look across projects:
+          marketing, logistics, and AI experiments that share the same
+          systems-thinking mindset.
+        </p>
+        <p>
+          Each post below links back to a case study, so you can move
+          from <strong>story</strong> to <strong>evidence</strong> with one click.
+        </p>
+      </div>
+
+      <div class="posts-grid">
+        <!-- Post 1 -->
+        <article class="post-card">
+          <a href="./blog-fcu-musical.html" class="post-link">
+            <div class="post-image">
+              <img src="./images/blog-hero-1.jpg" alt="FCU Musical Theatre" />
+            </div>
+            <div class="post-content">
+              <p class="post-tag">Logistics · Behind the scenes</p>
+              <h3 class="post-title">
+                Amplifying the Stage – FCU Musical Theatre
+              </h3>
+              <p class="post-excerpt">
+                What I learned from running a musical like a small operations team.
+              </p>
+              <p class="post-meta">2019 · 5 min read</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="post-card">
+          <a href="./blog-golden-eagle.html" class="post-link">
+            <div class="post-image">
+              <img src="./images/blog-golden-eagle.jpg" alt="Golden Eagle Festival" />
+            </div>
+            <div class="post-content">
+              <p class="post-tag">Event design · Logistics</p>
+              <h3 class="post-title">
+                Designing Flow for a Climate Film Festival
+              </h3>
+              <p class="post-excerpt">
+                Notes from coordinating the TAISE Golden Eagle Micro-Movie Festival.
+              </p>
+              <p class="post-meta">2023 · 6 min read</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="post-card">
+          <a href="./blog-andertons-ai.html" class="post-link">
+            <div class="post-image">
+              <img src="./images/blog-andertons.jpg" alt="Andertons AI marketing" />
+            </div>
+            <div class="post-content">
+              <p class="post-tag">Marketing · Tech &amp; AI</p>
+              <h3 class="post-title">
+                What I Learned from Andertons’ AI-Driven Marketing Experiments
+              </h3>
+              <p class="post-excerpt">
+                Using AI tools to support ideation, segmentation and content in music retail.
+              </p>
+              <p class="post-meta">2024 · 7 min read</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- 返回 portfolio / contact 小 CTA -->
+    <section class="bottom-cta">
+      <p>
+        Prefer looking at projects first?
+        <a href="./cases.html" class="text-link">Browse my case studies →</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Hazellin. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+  </script>
+</body>
+</html>

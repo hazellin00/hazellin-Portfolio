@@ -1,0 +1,779 @@
+/* Global */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1;
+  font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif,"Inter", sans-serif;
+  color: #0f172a;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Libre Bodoni", "Times New Roman", serif;
+  color: #020617;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #6366f1;
+  margin: 0 0 0.4rem;
+}
+
+/* Header */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 8vw;
+}
+
+.logo {
+  font-family: "Cutive Mono", monospace;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.main-nav {
+    font-family: "Cutive Mono", monospace;
+  display:flex;
+  gap: 1.5rem;
+  font-size: 1.0rem;
+  letter-spacing: 0.01em; 
+}
+
+.main-nav a {
+  position: relative;
+  padding-bottom: 0.1rem;
+  text-decoration: none;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: red;
+  transition: width 0.8s ease;
+}
+
+.main-nav a:hover::after {
+  background: #c15b28;
+  width: 100%;
+}
+
+
+/* ========== Layout ========== */
+.page {
+  min-height: 100vh;
+}
+
+.hero {
+  max-width: 900px;
+  height: 400px;
+  margin: 120px auto 0;
+  padding: 0 24px;
+}
+
+.hero-title {
+  font-size: 2.3rem;         /* 比現在小，更高級 */
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1.6rem;
+  color: #0b0c1d;
+  text-align: center ;
+}
+
+.hero-subtitle {
+  font-size: 1.0rem;
+  color: #7a7e85;
+  font-family: "Inter";
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+
+.cta-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.social-row {
+  margin-top: 0.3rem;
+  font-size: 0.95rem;       /* 小字但更精緻 */
+  color: #555;
+  opacity: 0.85;
+ text-align: center;
+}
+
+.social-row a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.social-row a:hover {
+  text-decoration: underline;
+}
+
+.btn.primary {
+  background: #4d3df7;
+  color: white;
+  padding: 0.85rem 1.9rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.btn.ghost {
+  border: 1px solid #ccc;
+  padding: 0.85rem 1.9rem;
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+
+
+/* Buttons */
+/* .cta-row {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease,
+              border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #f9fafb;
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.55);
+}
+
+.btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 40px rgba(79, 70, 229, 0.7);
+}
+
+.btn.ghost {
+  background: #ffffff;
+  color: #111827;
+  border-color: rgba(148, 163, 184, 0.7);
+}
+
+.btn.ghost:hover {
+  background: #f9fafb;
+} */
+
+/* == AI Trainee Floating Badge == */
+.ribbon-badge {
+  font-family: "Libre Bodoni";
+  font-style: italic;
+  font-weight: 600;
+  display: inline-block;
+  margin: 1rem auto 0.4rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #84aad9, #6971dcac);
+  color: white;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+}
+
+.elegant-title {
+  display: block;
+  font-size: 1.1rem;
+  color: #4b5563;
+}
+
+/* Floating animation */
+.float-wrapper {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.hidden-float {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.6s ease;
+}
+
+.float-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== AI Highlight Card ========== */
+.ai-highlight {
+  max-width: 840px;
+  margin: 1.8rem auto 2.5rem;
+  padding: 1.75rem 2rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #eef2ff, #fdf2ff);
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+  text-align: center;
+}
+
+.ai-title{
+  font-size: 18px;
+}
+
+.ai-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #6b7280;
+  margin: 0 0 0.4rem;
+}
+
+.skills-interactive {
+  display: grid;
+  grid-template-columns: minmax(160px, 200px) 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.skills-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.skill-tab {
+  border: none;
+  padding: 0.6rem 1rem;
+  background: #e0e3ff;
+  border-radius: 999px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.9rem;
+  transition: 0.25s ease;
+}
+
+.skill-tab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.25);
+}
+
+.skill-tab.active {
+  background: linear-gradient(135deg, #4f46e5, #a855f7);
+  color: white;
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.45);
+}
+
+/* Right-side panels */
+/* 右邊容器 */
+.skills-panel-wrapper {
+  min-height: 120px;
+  text-align: left;        /* 右邊內容改成靠左 */
+}
+
+/* 所有 panel 預設都不顯示，但位置正常排版 */
+.skill-panel {
+  display: none;
+  opacity: 1;
+  position: static;
+  transform: none;
+}
+
+/* 被選到的那一個才顯示出來 */
+.skill-panel.active {
+  display: block;
+}
+
+.skill-panel ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.2rem;  /* 往內縮一點 */
+}
+
+.skill-panel li {
+  margin: 0.1rem 0;
+}
+
+/* Skill pills (if you want later) */
+.skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: left;
+  margin-top: 1rem;
+}
+
+.pill {
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: #eef2ff;
+  font-size: 0.85rem;
+  cursor: default;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
+}
+/* ===== Journey / How I ended up here —— 全寬 + 放大字體 + 拉寬 ===== */
+
+.journey-section {
+  width: 100%;
+  margin: 3rem 0 0;
+  /* 左右 padding 縮一點，內容就更寬 */
+  padding: 3rem 5vw;
+  border-radius: 0;
+  background: #fbf5ff;
+  display: grid;
+  /* 右邊佔比較多寬度，看起來不擠 */
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.7fr);
+  gap: 2.8rem;
+}
+
+.journey-copy {
+  max-width: 560px;
+}
+
+.journey-title {
+  margin: 6rem 0 2rem;
+  /* 標題再大一點 */
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.5;
+}
+
+.journey-text {
+  margin: 0 0 1rem;
+  /* 內文字放大 */
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #4b3b41;
+  line-height: 1.9;
+}
+
+.journey-text.small {
+  font-size: 0.95rem;
+  color: #76606b;
+}
+
+/* 右邊 2×2 卡片 */
+
+/* === Journey Carousel === */
+
+.journey-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #efe3ff;
+  box-shadow: 0 18px 44px rgba(148, 90, 211, 0.25);
+  padding: 1.75rem 1.5rem 2.3rem;  /* 原本 1.25 → 1.75 之類 */
+}
+
+
+/* 裡面的「軌道」橫向排列 slide */
+.journey-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* 每一個 slide 占滿整個容器寬度 */
+.journey-slide {
+  min-width: 100%;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+.journey-slide h3 {
+  margin: 0 0 0.7rem;
+  font-size: 1.1rem;
+}
+
+.journey-slide p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* CTA slide 延用原本的顏色＋樣式 */
+.journey-slide.journey-cta {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.2rem 1.3rem;
+  box-shadow: 0 16px 40px rgba(148, 163, 184, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+/* 底下的小圓點 */
+.journey-dots {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.journey-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(148, 90, 211, 0.35);
+  cursor: pointer;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.journey-dots .dot.active {
+  width: 18px;
+  background: rgba(148, 90, 211, 0.95);
+}
+
+/* RWD：小螢幕時整段改成上下排列，你原本的就可以沿用 */
+@media (max-width: 900px) {
+  .journey-section {
+    grid-template-columns: 1fr;
+    padding: 2.2rem 6vw;
+  }
+
+  .journey-carousel {
+    margin-top: 1.5rem;
+  }
+}
+
+.journey-card h3 {
+  margin: 0 0 0.55rem;
+  /* 卡片標題也放大一點 */
+  font-size: 1.1rem;
+}
+
+.journey-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.journey-photo {
+  width: 100%;
+  height: 340px;              /* 原本 260px → 拉高 */
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 0.9rem;
+}
+
+/* CTA 卡片 */
+
+/* .journey-card.journey-cta {
+  background: #ffffff;
+  color: #43344b;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  box-shadow: 0 16px 40px rgba(148, 163, 184, 0.25);
+  align-items: flex-start;
+  gap: 0.7rem;
+} */
+
+/* .journey-cta-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+} */
+
+.journey-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  border: none;
+  background-image: linear-gradient(135deg, #5b8dff, #a855f7);
+  color: #f9fafb;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.18s ease;
+}
+
+.journey-cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(88, 80, 236, 0.55);
+}
+
+/* SECTION */
+/* SECTION */
+.industry-scroll-section {
+  padding: 70px 0 90px ;
+  background: #faf5ff;
+  text-align: left;
+}
+
+/* TITLE */
+.industry-scroll-title {
+  font-family: "Libre Bodoni", serif;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+/* HORIZONTAL SCROLL WRAPPER */
+.industry-scroll-container {
+  display: flex;
+  gap: 32px;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.industry-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* CARD */
+.industry-scroll-card {
+  min-width: 240px;
+  max-width: 240px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 22px 18px;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.09);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-snap-align: start;
+  transition: 0.3s;
+}
+
+.industry-scroll-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* LOGO */
+.industry-scroll-card img {
+  width: 80%;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+/* LINK */
+.industry-scroll-card a {
+  color: #b66a57;
+  text-decoration: none;
+  border-bottom: 1px solid #d8a49a;
+  padding-bottom: 3px;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.industry-scroll-card a:hover {
+  color: #a25748;
+  border-color: #a25748;
+}
+
+
+/* ========== Expertise Section ========== */
+/* .expertise-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.expertise-title {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.expertise-card {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 1.5rem 1.25rem 2rem;
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
+}
+
+.expertise-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 1.2rem;
+}
+
+.expertise-heading {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.expertise-sub details {
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+} */
+/* 展開文字區塊 & 箭頭動畫 */
+
+/* .expertise-sub details {
+  margin: 0.4rem 0;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.expertise-sub summary {
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+} */
+
+/* 移除預設箭頭 */
+/* .expertise-sub summary::-webkit-details-marker {
+  display: none;
+} */
+
+/* 自己畫一個小箭頭 ▸ */
+/* .expertise-sub summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 0.4rem;
+  transition: transform 0.18s ease;
+  font-size: 0.8rem;
+} */
+
+/* 打開時箭頭轉 90 度 */
+/* .expertise-sub details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.expertise-sub p {
+  margin: 0.4rem 0 0.3rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+} */
+
+/* 下面的 case 連結列表 */
+
+/* .expertise-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.expertise-links li {
+  margin: 0.15rem 0;
+}
+
+.expertise-links a {
+  font-size: 0.88rem;
+  color: #4f46e5;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 1px;
+}
+
+.expertise-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 1px;
+  background: #4f46e5;
+  transition: width 0.18s ease;
+}
+
+.expertise-links a:hover::after {
+  width: 100%;
+} */
+
+
+/* ========== Footer ========== */
+.site-footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 1.25rem 8vw 1.75rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+  text-align: center;
+  background: #f9fafb;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    padding: 4.5rem 1.5rem 2.5rem;
+  }
+
+  .right_image {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding-inline: 1.5rem;
+  }
+
+  .main-nav {
+    gap: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .hero-card {
+    padding: 2rem 1.5rem 2.3rem;
+  }
+
+
+  .expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
