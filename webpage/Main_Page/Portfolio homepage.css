@@ -489,3 +489,94 @@ a {
     transform: translate(-50%, -50%);
   }
 }
+
+/* ===== Mobile layout (Portfolio Homepage) ===== */
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+  }
+
+  /* Header：變小＋允許換行 */
+  .site-header {
+    padding: 0.8rem 1.2rem;
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
+
+  .main-nav {
+    justify-content: flex-start;
+    gap: 0.8rem;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  /* Hero 區：高度降低、文字置中一點 */
+  .hero-full {
+    height: 70vh;
+  }
+
+  .hero-title {
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 1.5rem;
+  }
+
+  /* Paths 區：兩側改用少量 margin */
+  .paths {
+    margin: 2rem 1rem;
+  }
+
+  .paths h2 {
+    text-align: left;
+  }
+
+  /* Explore Projects 區：大標縮小一點 */
+  .cases-banner {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .banner-title {
+    font-size: 1.8rem;
+  }
+
+  /* 浮動圖片改成直向卡片排列 */
+  .floating-cases {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    padding: 0 1rem 2rem;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .float-img {
+    position: static;
+    width: 100%;
+  }
+
+  .size-large,
+  .size-medium,
+  .size-small {
+    width: 100%;
+  }
+
+  .pos-a,
+  .pos-b,
+  .pos-c,
+  .pos-d,
+  .pos-e,
+  .pos-f {
+    top: auto;
+    left: auto;
+  }
+
+  /* Footer 字小一點、左右 padding 收窄 */
+  .site-footer {
+    padding: 1rem 1.2rem 1.5rem;
+    font-size: 0.75rem;
+  }
+}
