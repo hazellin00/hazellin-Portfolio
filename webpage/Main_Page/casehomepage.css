@@ -487,3 +487,83 @@ a {
     transform: translate(-50%, -50%);
   }
 }
+/* ===== Mobile layout (phones ≤ 768px) ===== */
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+  }
+
+  /* Header 比較小一點，導航可換行 */
+  .site-header {
+    padding: 0.8rem 1.2rem;
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
+
+  .main-nav {
+    justify-content: flex-start;
+    gap: 0.8rem;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  /* Hero 區不要這麼高，字小一點置中 */
+  .hero-full {
+    height: 70vh;
+  }
+
+  .hero-title {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  /* Paths 區兩側留白用百分比，不用 90px */
+  .paths {
+    margin: 2rem 1rem;
+  }
+
+  .paths h2 {
+    text-align: left;
+  }
+
+  /* Explore Cases 區：取消 absolute，改成直向卡片 */
+  .banner-title {
+    font-size: 1.8rem;
+  }
+
+  .floating-cases {
+    position: static;
+    height: auto;
+    margin-top: 2rem;
+    padding: 0 1rem 2rem;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .float-img {
+    position: static;
+    width: 100%;
+  }
+
+  .size-large,
+  .size-medium,
+  .size-small {
+    width: 100%;
+  }
+
+  /* Timeline 從 4 欄改成 1 欄 */
+  .process-line {
+    grid-template-columns: 1fr;
+    margin: 2rem 1rem 0;
+    gap: 1.2rem;
+  }
+
+  .process-line::before {
+    display: none; /* 移除中間那條水平線 */
+  }
+
+  .process-step {
+    text-align: left;
+  }
+}
