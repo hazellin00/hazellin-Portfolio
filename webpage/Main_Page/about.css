@@ -414,20 +414,6 @@ html {
   }
 }
 
-@media (max-width: 768px) {
-  .site-header {
-    padding-inline: 1.5rem;
-  }
-
-  .page {
-    padding-inline: 1.25rem;
-  }
-
-  .cta-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
 /* Skills + Stats section */
 .skills-stats {
   margin-bottom: 3rem;
@@ -521,5 +507,82 @@ html {
 @media (max-width: 900px) {
   .skills-stats {
     grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 768px) {
+  /* Header：變小一點，導航允許換行 */
+  .site-header {
+    padding: 0.8rem 1.2rem;
+    flex-wrap: wrap;
+    row-gap: 0.4rem;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  /* 主要內容左右留白縮小 */
+  .page {
+    padding: 2rem 1.25rem 3rem;
+  }
+
+  /* Hero：改成一欄、圖片不要太大 */
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .hero-right {
+    order: -1;           /* 讓照片跑到上面（看你喜歡，可刪） */
+    align-items: center;
+  }
+
+  .photo-placeholder {
+    height: auto;
+    padding: 0.8rem;
+    box-shadow: 0 12px 30px rgba(129, 140, 248, 0.6);
+  }
+
+  .photo {
+    width: 100%;
+    max-width: 260px;
+    padding: 0;
+    border-radius: 32px;
+  }
+
+  /* Skills + Stats 區：padding 小一點 */
+  .skills-stats {
+    padding: 1.4rem 1.2rem 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Journey 卡片區：左右稍微貼齊 */
+  .vp-hero {
+    padding-inline: 0.75rem;
+  }
+
+  /* CTA：改成上下堆疊 */
+  .cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.6rem 1.5rem 1.8rem;
+  }
+
+  .cta-actions {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+
+  /* Footer：字小一點、左右 padding 收窄 */
+  .site-footer {
+    padding: 1rem 1.2rem 1.4rem;
+    font-size: 0.75rem;
   }
 }
