@@ -469,26 +469,6 @@ a {
 }
 
 
-@keyframes fade-in {
-  0% {opacity:0; transform:translateY(20px);}
-  100% {opacity:1; transform:translateY(0);}
-}
-
-@keyframes zoom-in {
-  0% {transform:scale(1.05);}
-  100% {transform:scale(1);}
-}
-/* 淡入動畫 */
-@keyframes fadeInHero {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -45%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
-}
 
 /* ===== Mobile layout (Portfolio Homepage) ===== */
 @media (max-width: 768px) {
@@ -496,53 +476,68 @@ a {
     margin: 0;
   }
 
-  /* Header：變小＋允許換行 */
+  /* Header：縮小一點＋允許換行 */
   .site-header {
     padding: 0.8rem 1.2rem;
     flex-wrap: wrap;
-    row-gap: 0.5rem;
+    row-gap: 0.4rem;
   }
 
   .main-nav {
+    flex-wrap: wrap;
     justify-content: flex-start;
     gap: 0.8rem;
     font-size: 0.85rem;
-    flex-wrap: wrap;
   }
 
-  /* Hero 區：高度降低、文字置中一點 */
+  /* Hero 區：高度降低、文字不要壓在圖片上太多 */
   .hero-full {
-    height: 70vh;
+    height: auto;
+  }
+
+  .hero-img-wrapper {
+    position: relative;
+    height: 260px;   /* 手機版 hero 圖片高度 */
   }
 
   .hero-title {
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1rem;
-    text-align: center;
-    padding: 0 1.5rem;
-  }
-
-  /* Paths 區：兩側改用少量 margin */
-  .paths {
-    margin: 2rem 1rem;
-  }
-
-  .paths h2 {
+    position: static;
+    transform: none;
+    padding: 1.75rem 1.5rem 2rem;
     text-align: left;
+    max-width: 26rem;
+    margin: 0 auto;
   }
 
-  /* Explore Projects 區：大標縮小一點 */
+  /* Section padding 縮小一點 */
+  .page-section {
+    padding: 2.5rem 0 3rem;
+  }
+
+  .page {
+    padding: 0 1.5rem 3rem;
+  }
+
+  /* Paths 區：左右留白少一點、改成一欄 */
+  .paths {
+    margin: 2rem 1rem 2rem;
+  }
+
+  .paths-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Explore Projects 區的大標題 */
   .cases-banner {
-    padding: 1.5rem 1rem 2rem;
+    padding: 1.5rem 0 2rem;
   }
 
   .banner-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
-  /* 浮動圖片改成直向卡片排列 */
+  /* 浮動圖片：取消 absolute，改成直向卡片 */
   .floating-cases {
     position: static;
     width: 100%;
@@ -574,9 +569,25 @@ a {
     left: auto;
   }
 
-  /* Footer 字小一點、左右 padding 收窄 */
+  /* Process timeline：從 4 欄變成 1 欄 */
+  .process-line {
+    grid-template-columns: 1fr;
+    padding-top: 1rem;
+    margin-top: 2rem;
+  }
+
+  .process-line::before {
+    display: none;
+  }
+
+  .process-step {
+    text-align: left;
+  }
+
+  /* Footer 字體稍微小一點 */
   .site-footer {
     padding: 1rem 1.2rem 1.5rem;
     font-size: 0.75rem;
   }
 }
+
