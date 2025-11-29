@@ -529,33 +529,68 @@ a {
   box-shadow: 0 14px 32px rgba(88, 80, 236, 0.55);
 }
 
-/* ========== Industry Section ========== */
+/* ========== Industry Section – Desktop / Tablet 預設版 ========== */
+
+
+/* ========== Industry Section – Desktop / Tablet ========== */
+
+/* ========== Industry Section – Desktop Fix ========== */
+
+/* 1. 外層區塊：基本上維持原樣，但 overflow-x: hidden 避免整個網頁出現卷軸 */
 .industry-scroll-section {
   padding: 70px 0 90px;
   background: #faf5ff;
   text-align: left;
+  overflow: hidden;
+  width: 100%; /* 關鍵：避免整個網站出現橫向卷軸，只讓卡片區滾動 */
 }
 
+/* 2. 標題：稍微加一點 padding-left 讓它跟下面的卡片對齊 */
 .industry-scroll-title {
   font-family: "Libre Bodoni", serif;
   font-size: 40px;
   margin-bottom: 40px;
+  padding-left: 20px; /* 小修改：讓標題不要貼齊螢幕最左邊 */
 }
 
-/* Desktop / 平板：用 grid 滿版排列 */
+/* 3. 容器：這是最重要的地方 */
 .industry-scroll-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  /* 視窗夠寬就 3～4 欄，窄一點就 2 欄、1 欄 */
-  gap: 32px;
-  padding: 0 20px 20px;
-  overflow: visible;
+  display: flex;            /* 變成橫排 */
+  flex-wrap: nowrap;        /* 關鍵：絕對不換行！ */
+  overflow-x: auto;         /* 關鍵：內容超出時顯示卷軸 */
+  gap: 32px;                /* 卡片之間的距離 */
+  
+  /* 設定 padding 讓左右滑動時，最左邊和最右邊不會被切掉陰影 */
+  padding: 20px 20px 40px 20px; 
+  
+  /* 讓滑動順暢一點 */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; 
 }
 
+/* 美化滾動條（選用，讓它不要那麼醜） */
+.industry-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+.industry-scroll-container::-webkit-scrollbar-thumb {
+  background: #ccc; 
+  border-radius: 4px;
+}
+.industry-scroll-container::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+/* 4. 卡片：這也是關鍵，必須鎖定寬度 */
 .industry-scroll-card {
+  /* 關鍵：設定不壓縮 (0)、不放大 (0)、固定寬度 (auto 或具體數值) */
+  flex: 0 0 auto; 
+  
+  width: 280px;      /* 設定一個固定寬度，不然它會忽大忽小 */
+  min-width: 280px;  /* 雙重保險，確保它不會被壓扁 */
+  
   background: #fff;
   border-radius: 20px;
-  padding: 22px 18px;
+  padding: 24px 18px;
   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.09);
   display: flex;
   flex-direction: column;
@@ -588,7 +623,6 @@ a {
   color: #a25748;
   border-color: #a25748;
 }
-
 
 /* ========== Expertise Section ========== */
 /* .expertise-section {
@@ -834,8 +868,9 @@ a {
     height: 220px;
   }
 
-   /* === Industry：手機改成橫向滑動 === */
+   /* ========== Mobile – Industry 橫向滑動 ========== */
 
+@media (max-width: 768px) {
   .industry-scroll-section {
     padding: 2.5rem 0 3rem;
   }
@@ -848,8 +883,8 @@ a {
   }
 
   .industry-scroll-container {
-    display: flex;              /* grid -> flex */
-    flex-wrap: nowrap;          /* 不換行 */
+    display: flex;
+    flex-wrap: nowrap;
     gap: 16px;
     padding: 0 1.5rem 1.5rem;
     overflow-x: auto;
@@ -864,7 +899,7 @@ a {
   }
 
   .industry-scroll-card {
-    flex: 0 0 80%;              /* 每張卡佔 80% 寬 */
+    flex: 0 0 80%;
     max-width: 80%;
     scroll-snap-align: start;
   }
@@ -875,9 +910,11 @@ a {
   }
 }
 
+
   /* Footer */
   .site-footer {
     padding: 1rem 1.5rem 1.4rem;
     font-size: 0.75rem;
   }
 
+}
