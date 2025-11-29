@@ -752,24 +752,14 @@ a {
   }
 
   /* Header：logo 獨佔一行，nav 在下面可換行 */
-  .site-header {
-    padding: 0.8rem 1.2rem;
-    flex-wrap: wrap;
-    row-gap: 0.4rem;
-    align-items: flex-start;
-  }
+
 
   .logo {
     flex-basis: 100%;
     margin-bottom: 0.2rem;
   }
 
-  .main-nav {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 0.8rem;
-    font-size: 0.9rem;
-  }
+
 
   /* Hero 區：字縮小一點，按鈕改直排 */
   .hero {
@@ -866,3 +856,90 @@ a {
     font-size: 0.75rem;
   }
 }
+/* 手機版（≤ 768px） */
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+  }
+
+  /* Header：讓 nav 可以換行（如果你之後想調 header，也會用到） */
+  .site-header {
+    padding: 0.8rem 1.2rem;
+    flex-wrap: wrap;
+    row-gap: 0.4rem;
+    align-items: flex-start;
+  }
+
+  .logo {
+    flex-basis: 100%;
+    margin-bottom: 0.2rem;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* 原本就有的：Hero 卡片、expertise grid */
+  .hero-card {
+    padding: 2rem 1.5rem 2.3rem;
+  }
+
+  .expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  /* ---- Journey 區（包含演講那張）---- */
+  .journey-section {
+    /* 兩欄改成一欄直排 */
+    grid-template-columns: 1fr;
+    padding: 2.4rem 1.5rem 2.6rem;
+    gap: 2rem;
+  }
+
+  .journey-title {
+    margin: 0 0 1.2rem;
+  }
+
+  .journey-photo {
+    /* 手機圖片不用這麼高，避免壓到內容 */
+    height: 220px;
+  }
+
+  /* ---- Industry cards 區 ---- */
+  .industry-scroll-section {
+    padding: 2.5rem 0 3rem;
+  }
+
+  .industry-scroll-title {
+    font-size: 2rem;
+    margin-bottom: 1.6rem;
+    padding: 0 1.5rem;
+    text-align: left;
+  }
+
+  .industry-scroll-container {
+    padding: 0 1.5rem;
+  }
+
+  /* 每張卡片在手機上比較寬，滑起來像一張一張的卡片 */
+  .industry-scroll-card {
+    min-width: 80%;
+    max-width: 80%;
+    margin-right: 1rem;
+  }
+
+  .industry-scroll-card img {
+    height: 90px;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 1rem 1.5rem 1.4rem;
+    font-size: 0.75rem;
+  }
+}
+
