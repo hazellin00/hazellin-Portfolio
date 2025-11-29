@@ -552,6 +552,8 @@ a {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .industry-scroll-container::-webkit-scrollbar {
@@ -910,6 +912,9 @@ a {
   }
 
   /* ---- Industry cards 區 ---- */
+  /* 手機版（≤ 768px） */
+@media (max-width: 768px) {
+  ...
   .industry-scroll-section {
     padding: 2.5rem 0 3rem;
   }
@@ -925,7 +930,6 @@ a {
     padding: 0 1.5rem;
   }
 
-  /* 每張卡片在手機上比較寬，滑起來像一張一張的卡片 */
   .industry-scroll-card {
     min-width: 80%;
     max-width: 80%;
@@ -935,6 +939,7 @@ a {
   .industry-scroll-card img {
     height: 90px;
   }
+}
 
   /* Footer */
   .site-footer {
@@ -942,4 +947,5 @@ a {
     font-size: 0.75rem;
   }
 }
+
 
