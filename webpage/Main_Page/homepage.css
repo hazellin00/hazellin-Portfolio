@@ -735,14 +735,13 @@ a {
 
 /* 中尺寸螢幕（平板） */
 @media (max-width: 900px) {
-  /* Journey 區塊上下改成直排 */
-  .journey-section {
-    grid-template-columns: 1fr;
-    padding: 2.4rem 6vw;
+  .hero {
+    flex-direction: column;
+    padding: 4.5rem 1.5rem 2.5rem;
   }
 
-  .journey-carousel {
-    margin-top: 1.5rem;
+  .right_image {
+    max-width: 100%;
   }
 }
 
@@ -752,11 +751,12 @@ a {
     margin: 0;
   }
 
-  /* Header：logo 獨占一行，nav 在下面可換行 */
+  /* Header：logo 獨佔一行，nav 在下面可換行 */
   .site-header {
     padding: 0.8rem 1.2rem;
     flex-wrap: wrap;
     row-gap: 0.4rem;
+    align-items: flex-start;
   }
 
   .logo {
@@ -771,29 +771,45 @@ a {
     font-size: 0.9rem;
   }
 
-  /* Hero 區：上方間距縮小、字體變小一點 */
+  /* Hero 區：字縮小一點，按鈕改直排 */
   .hero {
     max-width: 100%;
     margin: 90px auto 0;
-    padding: 0 1.4rem 2rem;
+    padding: 0 1.4rem 2.2rem;
   }
 
   .hero-title {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
+    text-align: left;
     margin-bottom: 1.1rem;
   }
 
   .hero-subtitle {
-    margin-top: 1.6rem;
-    margin-bottom: 0.9rem;
     font-size: 0.95rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    line-height: 1.6;
+  }
+
+  .cta-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+    margin-bottom: 1.8rem;
+  }
+
+  .cta-row .btn {
+    width: 100%;
+    text-align: center;
   }
 
   .social-row {
     font-size: 0.9rem;
   }
 
-  /* AI highlight 卡片變窄一點，改成直向排版 */
+  /* AI / skills 區：變成 1 欄 */
   .ai-highlight {
     margin: 1.6rem 1rem 2.4rem;
     padding: 1.4rem 1.4rem 1.8rem;
@@ -814,9 +830,9 @@ a {
     margin-top: 0.5rem;
   }
 
-  /* Journey 區：左右 padding 變小、標題不要離上面太遠 */
+  /* Journey 區：左右 padding 變小 */
   .journey-section {
-    padding: 2.2rem 1.5rem 2.6rem;
+    padding: 2.3rem 1.5rem 2.6rem;
     gap: 2rem;
   }
 
@@ -828,7 +844,7 @@ a {
     height: 220px;
   }
 
-  /* Industry 區：上下 padding 收窄，標題縮小 */
+  /* Industry 區 */
   .industry-scroll-section {
     padding: 2.5rem 0 3rem;
   }
@@ -844,7 +860,7 @@ a {
     padding-right: 1.5rem;
   }
 
-  /* Footer 字體小一點、左右 padding 縮小 */
+  /* Footer */
   .site-footer {
     padding: 1rem 1.5rem 1.4rem;
     font-size: 0.75rem;
