@@ -529,41 +529,30 @@ a {
   box-shadow: 0 14px 32px rgba(88, 80, 236, 0.55);
 }
 
-/* SECTION */
-/* SECTION */
+/* ========== Industry Section ========== */
 .industry-scroll-section {
   padding: 70px 0 90px;
   background: #faf5ff;
   text-align: left;
 }
 
-/* TITLE */
 .industry-scroll-title {
   font-family: "Libre Bodoni", serif;
   font-size: 40px;
   margin-bottom: 40px;
 }
 
-/* HORIZONTAL SCROLL WRAPPER */
+/* Desktop / 平板：用 grid 滿版排列 */
 .industry-scroll-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  /* 視窗夠寬就 3～4 欄，窄一點就 2 欄、1 欄 */
   gap: 32px;
-  padding: 20px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  overflow-x: auto;
-  overflow-y: hidden;
+  padding: 0 20px 20px;
+  overflow: visible;
 }
 
-.industry-scroll-container::-webkit-scrollbar {
-  display: none;
-}
-
-/* CARD */
 .industry-scroll-card {
-  min-width: 240px;
-  max-width: 240px;
   background: #fff;
   border-radius: 20px;
   padding: 22px 18px;
@@ -571,7 +560,6 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  scroll-snap-align: start;
   transition: 0.3s;
 }
 
@@ -580,7 +568,6 @@ a {
   box-shadow: 0 26px 45px rgba(0, 0, 0, 0.12);
 }
 
-/* LOGO */
 .industry-scroll-card img {
   width: 80%;
   height: 120px;
@@ -588,7 +575,6 @@ a {
   margin-bottom: 20px;
 }
 
-/* LINK */
 .industry-scroll-card a {
   color: #b66a57;
   text-decoration: none;
@@ -602,6 +588,7 @@ a {
   color: #a25748;
   border-color: #a25748;
 }
+
 
 /* ========== Expertise Section ========== */
 /* .expertise-section {
@@ -735,7 +722,7 @@ a {
 
 /* ========== Responsive ========== */
 
-/* 中尺寸螢幕（平板） */
+/* 平板：中尺寸 */
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
@@ -753,17 +740,27 @@ a {
     margin: 0;
   }
 
-  /* Header：logo 獨佔一行，nav 在下面可換行 */
-
+  /* Header：logo 一行，nav 在下面可換行 */
+  .site-header {
+    padding: 0.8rem 1.2rem;
+    flex-wrap: wrap;
+    row-gap: 0.4rem;
+    align-items: flex-start;
+  }
 
   .logo {
     flex-basis: 100%;
     margin-bottom: 0.2rem;
   }
 
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+  }
 
-
-  /* Hero 區：字縮小一點，按鈕改直排 */
+  /* Hero 區：字體縮小，按鈕直排 */
   .hero {
     max-width: 100%;
     margin: 90px auto 0;
@@ -801,7 +798,7 @@ a {
     font-size: 0.9rem;
   }
 
-  /* AI / skills 區：變成 1 欄 */
+  /* AI 區改成一欄 */
   .ai-highlight {
     margin: 1.6rem 1rem 2.4rem;
     padding: 1.4rem 1.4rem 1.8rem;
@@ -822,81 +819,8 @@ a {
     margin-top: 0.5rem;
   }
 
-  /* Journey 區：左右 padding 變小 */
+  /* Journey 區：變直排，圖片矮一點 */
   .journey-section {
-    padding: 2.3rem 1.5rem 2.6rem;
-    gap: 2rem;
-  }
-
-  .journey-title {
-    margin: 0 0 1.2rem;
-  }
-
-  .journey-photo {
-    height: 220px;
-  }
-
-  /* Industry 區 */
-  .industry-scroll-section {
-    padding: 2.5rem 0 3rem;
-  }
-
-  .industry-scroll-title {
-    font-size: 2rem;
-    padding: 0 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .industry-scroll-container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  /* Footer */
-  .site-footer {
-    padding: 1rem 1.5rem 1.4rem;
-    font-size: 0.75rem;
-  }
-}
-/* 手機版（≤ 768px） */
-@media (max-width: 768px) {
-  body {
-    margin: 0;
-  }
-
-  /* Header：讓 nav 可以換行（如果你之後想調 header，也會用到） */
-  .site-header {
-    padding: 0.8rem 1.2rem;
-    flex-wrap: wrap;
-    row-gap: 0.4rem;
-    align-items: flex-start;
-  }
-
-  .logo {
-    flex-basis: 100%;
-    margin-bottom: 0.2rem;
-  }
-
-  .main-nav {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 0.8rem;
-    font-size: 0.9rem;
-  }
-
-  /* 原本就有的：Hero 卡片、expertise grid */
-  .hero-card {
-    padding: 2rem 1.5rem 2.3rem;
-  }
-
-  .expertise-grid {
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
-  }
-
-  /* ---- Journey 區（包含演講那張）---- */
-  .journey-section {
-    /* 兩欄改成一欄直排 */
     grid-template-columns: 1fr;
     padding: 2.4rem 1.5rem 2.6rem;
     gap: 2rem;
@@ -907,14 +831,11 @@ a {
   }
 
   .journey-photo {
-    /* 手機圖片不用這麼高，避免壓到內容 */
     height: 220px;
   }
 
-  /* ---- Industry cards 區 ---- */
-  /* 手機版（≤ 768px） */
-@media (max-width: 768px) {
-  ...
+   /* === Industry：手機改成橫向滑動 === */
+
   .industry-scroll-section {
     padding: 2.5rem 0 3rem;
   }
@@ -927,17 +848,30 @@ a {
   }
 
   .industry-scroll-container {
-    padding: 0 1.5rem;
+    display: flex;              /* grid -> flex */
+    flex-wrap: nowrap;          /* 不換行 */
+    gap: 16px;
+    padding: 0 1.5rem 1.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .industry-scroll-container::-webkit-scrollbar {
+    display: none;
   }
 
   .industry-scroll-card {
-    min-width: 80%;
+    flex: 0 0 80%;              /* 每張卡佔 80% 寬 */
     max-width: 80%;
-    margin-right: 1rem;
+    scroll-snap-align: start;
   }
 
   .industry-scroll-card img {
     height: 90px;
+    object-fit: contain;
   }
 }
 
@@ -947,5 +881,3 @@ a {
     font-size: 0.75rem;
   }
 }
-
-
