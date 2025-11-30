@@ -406,40 +406,61 @@ a {
 /* =========================
    File embed section (修正版)
 ========================= */
+/* =========================
+   File embed section (最終修正版)
+========================= */
 .case-embed {
   margin-bottom: 3rem;
 }
 
 .case-embed-intro {
-  margin: 2rem;
+  margin: 2rem 0; /* 修改：上下留白，左右不留 (避免手機版被擠壓) */
   font-size: 0.92rem;
   color: #4b5563;
   line-height: 1.7;
 }
 
 .case-embed-intro2 {
-  margin: 2rem;
+  display: block;      /* 確保它是獨立一塊 */
+  margin: 2rem 0;      /* 上下留白 */
   font-size: 1.2rem;
   color: #4b5563;
   line-height: 1.8;
+  max-width: 100%;     /* 確保寬度正常 */
 }
 
-/* 修正這裡：原本是指向 embed，改成指向 iframe */
+/* 關鍵修改：改回 Block 模式，不要用 flex，這樣下面的內容才不會被吸上來 */
 .embed-wrapper {
   width: 100%;
-  display: flex;
-  justify-content: center; /* 讓影片置中 */
+  display: block;      /* 回歸正常區塊排版 */
+  text-align: center;  /* 讓內部的 inline 元素置中 */
+  margin-bottom: 2rem;
+}
+
+/* 專門控制影片外框的置中 */
+.embed-wrapper .frame {
+  width: 100%;
+  max-width: 800px;    /* 限制最大寬度 */
+  margin: 0 auto;      /* 區塊置中 */
+  display: block;
 }
 
 .embed-wrapper iframe {
-  width: 100%;            /* 關鍵：寬度設為容器的 100% */
-  max-width: 800px;       /* 設定最大寬度，避免在桌機上大到失控 */
-  height: auto;           /* 高度讓它自動計算 */
-  aspect-ratio: 16 / 9;   /* 關鍵：強制保持 16:9 的影片比例，手機看才不會變形 */
-  border-radius: 12px;    /* 加一點圓角比較好看 (選用) */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* 加一點陰影 (選用) */
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; /* 維持影片比例 */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: block;       /* 消除 iframe 下方預設的微小空隙 */
 }
 
+/* 確保 Gallery 不會受到影響 (沿用 Pacific Forum 的設定) */
+.case-gallery {
+  display: block;
+  width: 100%;
+  clear: both; /* 清除左右浮動干擾 */
+  margin-top: 3rem;
+}
 /* 手機版微調 (因為上面已經用 aspect-ratio 自動調整了，這裡其實可以簡化) */
 @media (max-width: 768px) {
   .embed-wrapper iframe {
