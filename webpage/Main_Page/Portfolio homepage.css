@@ -528,13 +528,27 @@ a {
     height: 260px; /* 手機版 hero 圖片高度 */
   }
 
-  .hero-title {
-    position: static;
-    transform: none;
-    padding: 1.75rem 1.5rem 2rem;
-    text-align: left;
-    max-width: 26rem;
-    margin: 0 auto;
+.hero-title {
+    position: absolute;        /* 關鍵：讓它浮在圖片上 */
+    top: 30%;                  /* 關鍵：原本是 40%，改小一點（如 30% 或 25%）就會「往上」 */
+    left: 50%;                 /* 水平置中定位點 */
+    transform: translate(-50%, -50%); /* 確保真正的正中間 */
+    
+    width: 90%;                /* 限制寬度，避免字碰到邊邊 */
+    max-width: 100%;           /* 確保不超出螢幕 */
+    text-align: center;        /* 手機版建議置中比較好看 */
+    padding: 0;                /* 移除多餘的 padding */
+    margin: 0;
+  }
+  
+  /* 如果覺得字太大，可以順便縮小一點 H1 */
+  .hero-title h1 {
+    font-size: 2rem;           /* 調整標題大小 */
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-title h3 {
+    font-size: 1rem;           /* 調整副標題大小 */
   }
 
   /* Section padding 縮小一點 */
