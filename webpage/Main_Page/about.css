@@ -529,26 +529,30 @@ html {
 }
 
 /* ---------------- RWD：手機版（≤768px）---------------- */
+/* ---------------- RWD：手機版優化（≤768px）---------------- */
 @media (max-width: 768px) {
-  /* 整體不要有奇怪的外距 */
+  /* 1. 全局設定：減少外距 */
   body {
     margin: 0;
   }
-
-  /* Header 變小、允許換行 */
-  .site-header {
-    padding: 0.8rem 1.2rem;
-    flex-wrap: wrap; /* 允許 logo / nav 斷行 */
-    row-gap: 0.4rem;
+  
+  /* 2. 版面容器 padding 縮小 */
+  .page {
+    padding: 1.5rem 1.25rem 3rem; /* 上下左右留白都縮小一點 */
   }
 
-  /* logo 獨佔一行在最上面 */
+  /* 3. Header：緊湊一點 */
+  .site-header {
+    padding: 0.8rem 1.2rem;
+    flex-wrap: wrap;
+    row-gap: 0.4rem;
+  }
+  
   .site-header .logo {
     flex-basis: 100%;
     margin-bottom: 0.2rem;
   }
-
-  /* 導覽列縮小、可以換行 */
+  
   .main-nav {
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -556,33 +560,79 @@ html {
     font-size: 0.9rem;
   }
 
-  /* About 頁面 hero／介紹區改成直排（如果你有這些 class ） */
-  .about-hero,
-  .about-intro,
-  .about-columns {
-    display: block;
+  /* 4. Hero 區塊：改成直排，且縮小字體 */
+  .hero {
+    grid-template-columns: 1fr; /* 強制變一欄 */
+    gap: 1.5rem;                /* 減少上下區塊距離 */
+    margin-bottom: 2rem;
   }
 
-  .about-text,
-  .about-photo,
-  .about-column {
-    width: 100%;
+  .hero-left h1 {
+    font-size: 2rem;           /* 標題字體改小 (原本可能太大) */
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+  }
+  
+  .hero-left p {
+    font-size: 0.95rem;        /* 內文稍微縮小 */
+    margin-bottom: 0.8rem;
   }
 
-  .about-hero,
-  .about-section {
-    padding: 2rem 1.5rem 2.5rem;
+  /* 5. Hero 圖片：自適應大小 */
+  .hero-right {
+    margin-top: 0;
   }
 
-  /* hero 裡的按鈕排版不要太擠（如果有 .hero-actions） */
+  .photo-placeholder {
+    height: auto;              /* 高度不要寫死 */
+    padding: 0.8rem;
+    border-radius: 20px;
+  }
+
+  .photo {
+    width: 100%;               /* 寬度佔滿容器 */
+    max-width: 100%;
+    height: auto;              /* 高度自動 */
+    border-radius: 16px;
+    padding: 0;                /* 移除圖片本身的 padding */
+  }
+
+  /* 6. 按鈕：全寬並直排 */
   .hero-actions {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    align-items: stretch;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
   }
 
   .hero-actions .btn {
     width: 100%;
+  }
+
+  /* 7. Skills 區塊 */
+  .skills-stats {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .stats-right {
+    grid-template-columns: 1fr; /* 數據也改成單欄，看起來比較清楚 */
+    gap: 0.8rem;
+  }
+
+  /* 8. Journey 輪播區 */
+  .vp-hero {
+    margin: 2rem auto;
+  }
+  
+  .vp-stage {
+    height: 380px;  /* 稍微調小高度 */
+  }
+  
+  /* 手機版卡片縮小 */
+  .vp-card {
+    width: 260px;
+    height: 320px;
   }
 }
