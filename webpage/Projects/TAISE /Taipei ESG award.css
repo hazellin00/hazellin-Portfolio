@@ -404,7 +404,7 @@ a {
 }
 
 /* =========================
-   File embed section
+   File embed section (修正版)
 ========================= */
 .case-embed {
   margin-bottom: 3rem;
@@ -424,20 +424,28 @@ a {
   line-height: 1.8;
 }
 
-
-.embed-wrapper embed {
+/* 修正這裡：原本是指向 embed，改成指向 iframe */
+.embed-wrapper {
   width: 100%;
-  height: 650px;     /* 直式文件可以高一點 */
+  display: flex;
+  justify-content: center; /* 讓影片置中 */
 }
 
-/* 手機把高度縮小一點 */
+.embed-wrapper iframe {
+  width: 100%;            /* 關鍵：寬度設為容器的 100% */
+  max-width: 800px;       /* 設定最大寬度，避免在桌機上大到失控 */
+  height: auto;           /* 高度讓它自動計算 */
+  aspect-ratio: 16 / 9;   /* 關鍵：強制保持 16:9 的影片比例，手機看才不會變形 */
+  border-radius: 12px;    /* 加一點圓角比較好看 (選用) */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* 加一點陰影 (選用) */
+}
+
+/* 手機版微調 (因為上面已經用 aspect-ratio 自動調整了，這裡其實可以簡化) */
 @media (max-width: 768px) {
-  .embed-wrapper embed {
-    height: 480px;
+  .embed-wrapper iframe {
+    width: 100%; /* 確保手機版佔滿螢幕寬度 */
   }
 }
-
-
 /* =========================
    Gallery (horizontal scroll)
 ========================= */
