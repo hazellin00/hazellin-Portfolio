@@ -1,0 +1,391 @@
+/* =========================
+   Base & Typography
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #0f172a;
+  background: radial-gradient(circle at top left, #e2f0ff, #f5f0ff 45%, #fdfcff 80%);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Libre Bodoni", "Times New Roman", serif;
+  color: #020617;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #6366f1;
+  margin: 0 0 0.4rem;
+}
+
+/* =========================
+   Header
+========================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 8vw;
+}
+
+.logo {
+  font-family: "Cutive Mono", monospace;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.4rem;
+  font-size: 0.9rem;
+}
+
+.main-nav a {
+  position: relative;
+  padding-bottom: 0.1rem;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: #4f46e5;
+  transition: width 0.2s ease;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   Layout
+========================= */
+.case-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3.5rem;
+}
+
+/* =========================
+   Buttons
+========================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease,
+    border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn.primary {
+  background-image: linear-gradient(135deg, #5b8dff, #a855f7);
+  color: #f9fafb;
+  box-shadow: 0 18px 45px rgba(148, 163, 184, 0.6);
+}
+
+.btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 55px rgba(129, 140, 248, 0.9);
+}
+
+.btn.ghost {
+  background: #ffffff;
+  color: #0f172a;
+  border-color: rgba(148, 163, 184, 0.7);
+}
+
+.btn.ghost:hover {
+  background: #f3f4ff;
+}
+
+/* =========================
+   Hero
+========================= */
+.case-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 3.5fr);
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.case-hero-media img {
+  width: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow: 0 22px 55px rgba(148, 163, 184, 0.7);
+}
+
+.case-hero-text h1 {
+  margin: 0.4rem 0 0.7rem;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+}
+
+.case-subtitle {
+  margin: 0 0 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.breadcrumb {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin: 0 0 0.4rem;
+}
+
+.crumb-sep {
+  margin: 0 0.25rem;
+}
+
+.crumb a {
+  text-decoration: underline;
+}
+
+.path-pill {
+  display: inline-flex;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  background: #eef2ff;
+  border: 1px solid rgba(129, 140, 248, 0.8);
+}
+
+.case-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1.5rem;
+  margin: 1rem 0 1.3rem;
+  font-size: 0.86rem;
+}
+
+.case-meta dt {
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.case-meta dd {
+  margin: 0.1rem 0 0;
+  color: #6b7280;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+/* =========================
+   Intro / Text Block
+========================= */
+.case-embed {
+  margin-bottom: 3rem;
+}
+
+.case-embed-intro {
+  margin: 2rem 0;
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+/* S.T.A.R. List */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.8rem;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.92rem;
+  color: #4b5563;
+}
+
+.checklist li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #6366f1;
+  font-weight: bold;
+}
+
+/* =========================
+   AIDA Insights Grid (New for Thesis)
+========================= */
+.case-process {
+  margin-bottom: 3rem;
+}
+
+.insight-grid {
+  display: grid;
+  /* 強制設定為兩欄 (1fr 1fr)，這樣就會自動變成 2x2 */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 1.5rem;
+}
+@media (max-width: 768px) {
+  .insight-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.insight-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  box-shadow: 0 10px 30px rgba(148, 163, 184, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.insight-card:hover {
+  transform: translateY(-5px);
+}
+
+.insight-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.insight-card h3 {
+  margin: 0 0 0.8rem;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.insight-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* =========================
+   CTA / Takeaway
+========================= */
+.case-cta {
+  margin-bottom: 2.5rem;
+}
+
+.case-cta-inner {
+  background: linear-gradient(135deg, #5b8dff, #a855f7);
+  border-radius: 24px;
+  padding: 1.8rem 2rem;
+  color: #f9fafb;
+  box-shadow: 0 22px 55px rgba(129, 140, 248, 0.4);
+}
+
+.case-cta-inner h2 {
+  margin: 0 0 0.4rem;
+  color: #f9fafb;
+}
+
+/* =========================
+   Gallery (Charts)
+========================= */
+.case-gallery {
+  margin-bottom: 3rem;
+}
+
+.gallery-grid {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery-grid figure {
+  flex: 0 0 80vw;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 900px) {
+  .gallery-grid figure {
+    flex: 0 0 calc(50% - 0.75rem);
+    max-width: calc(50% - 0.75rem);
+  }
+}
+
+.zoom-card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(148, 163, 184, 0.5);
+}
+
+.zoom-card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* =========================
+   Footer
+========================= */
+.site-footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.6);
+  padding: 1.3rem 8vw 1.8rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+  text-align: center;
+  background: #f9fafb;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 900px) {
+  .case-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding-inline: 1.5rem;
+  }
+  .case-page {
+    padding-inline: 1.25rem;
+  }
+}
