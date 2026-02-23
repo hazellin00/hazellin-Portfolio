@@ -40,8 +40,11 @@ body {
 
    /* HEADER — FULL WIDTH */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 10;
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.9);
@@ -49,7 +52,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.4rem 8vw;
+  padding: 1.6rem 8vw;
 }
 
 h1, h2, h3, h4, h5 {
@@ -84,8 +87,8 @@ a {
 .main-nav {
     font-family: "Cutive Mono", monospace;
   display:flex;
-  gap: 1.5rem;
-  font-size: 1.0rem;
+  gap: 1.4rem;
+  font-size: 1.2rem;
   letter-spacing: 0.01em; 
 }
 
@@ -342,7 +345,7 @@ a {
 .site-footer {
   border-top: 1px solid rgba(148, 163, 184, 0.35);
   padding: 1.25rem 8vw 1.75rem;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   color: #6b7280;
   text-align: center;
   background: #f9fafb;
@@ -368,8 +371,9 @@ a {
 .floating-cases {
   position: relative;
   width: 100%;
-  height: 1000px; /* 你可以增加調整 */
+  height: 1000px; 
   margin-top: 6rem;
+  
 }
 
 /* 統一圖片 base style */
@@ -384,6 +388,8 @@ a {
   height: auto;
   border-radius: 18px;
   display: block;
+  left: 100px;
+  position: relative;
 }
 
 /* Hover 效果 */
@@ -431,7 +437,7 @@ a {
   padding: 1.8rem 1.2rem 0;
   border-top: 1px solid rgba(148, 163, 184, 0.7);
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   color: var(--text-muted);
 }
 
