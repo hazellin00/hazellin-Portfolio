@@ -38,7 +38,7 @@ a {
 
 /* Header */
 .site-header {
-  position: fixed;          /* 原本 sticky 改成 fixed */
+  position: fixed;          
   top: 0;
   left: 0;
   right: 0;
