@@ -542,14 +542,18 @@ a {
     position: static;
     height: auto;
     margin-top: 2rem;
-    padding: 0 1rem 2rem;
+    padding: 0 1.5rem 2rem;
     display: grid;
     gap: 1.5rem;
+    justify-content: center;
   }
 
   .float-img {
     position: static;
     width: 100%;
+    max-width: 450px;       
+    margin: 0 auto;        
+    transform: none !important;
   }
 
   .size-large,
@@ -566,10 +570,10 @@ a {
   }
 
   .process-line::before {
-    display: none; /* 移除中間那條水平線 */
+    display: none; 
   }
 
   .process-step {
-    text-align: left;
+    text-align: center;
   }
 }
