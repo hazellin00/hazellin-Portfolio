@@ -9,7 +9,7 @@ const router = createRouter({
       name: "home",
       component: HomeView,
     },
-    // Adding placeholder routes that we will implement later
+
     {
       path: "/about",
       name: "about",
