@@ -36,8 +36,10 @@
             <p>Using software, data &amp; AI tools to support growth.</p>
             <div class="case-links">
               <router-link to="/projects/ai-track">AI Track</router-link>
+              <router-link to="/projects/dinejoy">Dine Joy</router-link>
+              <router-link to="/projects/master-thesis">Master Thesis</router-link>
             </div>
-            <span class="path-tag">1 case</span>
+            <span class="path-tag">3 cases</span>
           </div>
 
           <div class="path-card">
@@ -85,13 +87,13 @@
             <img :src="base + 'dinejoy/01.jpg'" alt="Dinejoy">
           </router-link>
 
-          <router-link class="float-img size-medium pos-g" to="/projects/master-thesis">
+          <router-link class="float-img size-medium pos-h" to="/projects/master-thesis">
             <img src="@/assets/images/master-thesis-1.jpg" alt="Master Thesis">
           </router-link>
         </section>
       </section>
 
-    <div class="footer1" style="margin-bottom: 50px;">
+    <div class="float-img size-medium pos-i" style="margin-bottom: 50px;">
       <router-link to="/cases" class="btn primary">Learn More on Cases</router-link>
     </div>
   </main>
@@ -354,6 +356,9 @@ p { font-size: 1.05rem; }
 .pos-e { top: 950px; left: 50%; }
 .pos-f { top: 1200px; left: 10%; }
 .pos-g { top: 1750px; left: 50%; }
+.pos-h { top: 1800px; left: 10%; }
+.pos-i { top: 3800px; left: 40%; }
+
 
 .footer1 {
   margin-top: 3rem;
