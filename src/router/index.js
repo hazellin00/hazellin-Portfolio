@@ -80,6 +80,11 @@ const router = createRouter({
       name: "master-thesis",
       component: () => import("../views/projects/MasterThesisProject.vue"),
     },
+    {
+      path: "/projects/dinejoy",
+      name: "dinejoy",
+      component: () => import("../views/projects/Dinejoy.vue"),
+    },
   ],
 });
 
