@@ -1,3 +1,7 @@
+<script setup>
+const base = import.meta.env.BASE_URL
+</script>
+
 <template>
   <div class="page-container">
     <main class="project-page">
@@ -212,13 +216,13 @@
           <!-- 改用 gallery-grid，沿用你原本的橫向滑動樣式 -->
           <div class="gallery-grid">
             <figure class="zoom-card">
-              <img src="../../../images/微電影照片.jpg" alt="On-site coordination with teammates during the event" />
+              <img :src="base + 'golden-eagle/film-photo.jpg'" alt="On-site coordination with teammates during the event" />
             </figure>
             <figure class="zoom-card">
-              <img src="../../../images/金雕背景.jpg" alt="Team photo after the festival awards ceremony" />
+              <img :src="base + 'golden-eagle/golden-eagle-bg.jpg'" alt="Team photo after the festival awards ceremony" />
             </figure>
             <figure class="zoom-card">
-              <img src="../../../images/S__18047000_0.jpg" alt="Team photo after the festival awards ceremony" />
+              <img :src="base + 'golden-eagle/team-photo.jpg'" alt="Team photo after the festival awards ceremony" />
             </figure>
           <figure class="zoom-card">
             <img src="@/assets/images/taise-golden-eagle.jpg" alt="TAISE Golden Eagle Award" />

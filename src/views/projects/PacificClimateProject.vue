@@ -1,3 +1,7 @@
+<script setup>
+const base = import.meta.env.BASE_URL
+</script>
+
 <template>
   <div class="page-container">
     <main class="project-page">
@@ -85,28 +89,27 @@
         <h2>Highlights from the banquet</h2>
         <div class="gallery-grid">
           <figure class="zoom-card">
-            <img src="../../../DiplomacyPacific/0718png/歡迎晚宴議程_page-0001.jpg"
+            <img :src="base + 'pacific/agenda-1.jpg'"
               alt="Climate Change Forum banquet — event overview slide" />
           </figure>
 
           <figure class="zoom-card">
-            <img src="../../../DiplomacyPacific/0718png/歡迎晚宴議程_page-0002.jpg"
+            <img :src="base + 'pacific/agenda-2.jpg'"
               alt="Climate Change Forum banquet — program &amp; run-of-show" />
           </figure>
 
           <figure class="zoom-card">
-            <img src="../../../DiplomacyPacific/0718png/歡迎晚宴議程_page-0003.jpg"
+            <img :src="base + 'pacific/agenda-3.jpg'"
               alt="Delegates and guests at the Climate Change Forum welcome banquet" />
           </figure>
 
           <figure class="zoom-card">
-            <img src="../../../DiplomacyPacific/0718png/歡迎晚宴議程_page-0004.jpg"
+            <img :src="base + 'pacific/agenda-4.jpg'"
               alt="Delegates and guests at the Climate Change Forum welcome banquet" />
           </figure>
 
-
           <figure class="zoom-card">
-            <img src="../../../DiplomacyPacific/0718png/歡迎晚宴議程_page-0005.jpg"
+            <img :src="base + 'pacific/agenda-5.jpg'"
               alt="Delegates and guests at the Climate Change Forum welcome banquet" />
           </figure>
         </div>
@@ -117,13 +120,13 @@
       <div class="photo-row">
         <figure>
           <img
-            src="../../../images/pacific_forum.jpg"
+            :src="base + 'pacific/pacific-forum.jpg'"
             alt="Production team preparing the Climate Change Forum welcome banquet"
           />
         </figure>
         <figure>
           <img
-            src="../../../images/pacific_大合照.jpg"
+            :src="base + 'pacific/pacific-group.jpg'"
             alt="On-site coordination during the welcome banquet program"
           />
         </figure>

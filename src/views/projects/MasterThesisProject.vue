@@ -1,3 +1,7 @@
+<script setup>
+const base = import.meta.env.BASE_URL
+</script>
+
 <template>
   <div class="page-container">
     <main class="project-page">
@@ -91,76 +95,76 @@
         </figure>
 
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/2.jpg" alt="Purchase Intention Analysis Chart" />
+          <img :src="base + 'master-thesis/2.jpg'" alt="Purchase Intention Analysis Chart" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/3.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/3.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/4.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/4.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/5.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/5.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/6.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/6.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/7.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/7.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/8.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/8.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/9.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/9.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/10.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/10.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/11.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/11.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/12.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/12.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/13.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/13.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/14.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/14.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/15.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/15.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/16.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/16.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/17.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/17.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/18.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/18.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/19.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/19.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/20.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/20.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/21.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/21.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/22.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/22.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/23.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/23.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/24.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/24.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
         <figure class="zoom-card">
-          <img src="/hazellin-Portfolio/master-thesis/25.jpg" alt="E-commerce Mockup used in survey" />
+          <img :src="base + 'master-thesis/25.jpg'" alt="E-commerce Mockup used in survey" />
         </figure>
 
       </div>

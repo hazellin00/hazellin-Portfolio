@@ -1,3 +1,7 @@
+<script setup>
+const base = import.meta.env.BASE_URL
+</script>
+
 <template>
   <div class="page-container">
     <main class="project-page">
@@ -95,29 +99,29 @@
         <div class="gallery-grid">
           <figure class="zoom-card">
             <img
-              src="../../../Modular/jpg_file/Modular_Agency- Acer_E-Scooter Project_Management_Site_Usage_Plan_page-0001.jpg"
+              :src="base + 'modular/slide-1.jpg'"
               alt="Acer E-Scooter Project Management Site Usage Plan — page 1" />
           </figure>
 
           <figure class="zoom-card">
             <img
-              src="../../../Modular/jpg_file/Modular_Agency- Acer_E-Scooter Project_Management_Site_Usage_Plan_page-0002.jpg"
+              :src="base + 'modular/slide-2.jpg'"
               alt="Acer E-Scooter Project Management Site Usage Plan — page 2" />
           </figure>
 
           <figure class="zoom-card">
             <img
-              src="../../../Modular/jpg_file/Modular_Agency- Acer_E-Scooter Project_Management_Site_Usage_Plan_page-0003.jpg"
+              :src="base + 'modular/slide-3.jpg'"
               alt="Acer E-Scooter Project Management Site Usage Plan — page 3" />
           </figure>
           <figure class="zoom-card">
             <img
-              src="../../../Modular/jpg_file/Modular_Agency- Acer_E-Scooter Project_Management_Site_Usage_Plan_page-0004.jpg"
+              :src="base + 'modular/slide-4.jpg'"
               alt="Acer E-Scooter Project Management Site Usage Plan — page 4" />
           </figure>
           <figure class="zoom-card">
             <img
-              src="../../../Modular/jpg_file/Modular_Agency- Acer_E-Scooter Project_Management_Site_Usage_Plan_page-0005.jpg"
+              :src="base + 'modular/slide-5.jpg'"
               alt="Acer E-Scooter Project Management Site Usage Plan — page 5" />
           </figure>
         </div>
@@ -127,13 +131,13 @@
   <div class="photo-row">
     <figure>
       <img
-        src="../../../images/modular_acer_1.jpg"
+        :src="base + 'modular/modular-acer-1.jpg'"
         alt="Modular Agency & Acer e-scooter shoot – team group photo"
       />
     </figure>
     <figure>
       <img
-        src="../../../images/modular_agent_3.png"
+        :src="base + 'modular/modular-agent-3.png'"
         alt="On set during the e-scooter shoot"
       />
     </figure>
