@@ -5,8 +5,7 @@
       <!-- HERO -->
       <section class="project-hero">
         <div class="project-hero-media media-placeholder">
-          <!-- INSERT: hero image or demo screenshot here -->
-          <div class="placeholder-box tall">[ Insert hero image / app screenshot ]</div>
+          <img :src="base + 'dinejoy/homepage.png'" alt="Demo Day photo 1" />
         </div>
         <div class="project-hero-text">
           <p class="breadcrumb">
@@ -196,7 +195,7 @@
       <!-- VIDEO INSERT AREA -->
       <div class="embed-wrapper">
         <div class="frame">
-          <iframe src="https://drive.google.com/file/d/1Ziz3Oxk9QqjumwHs_9K6V3EmhsLGLgiz/view?usp=sharing" width="800"
+          <iframe src="https://drive.google.com/file/d/1Ziz3Oxk9QqjumwHs_9K6V3EmhsLGLgiz/preview" width="800"
             height="500" allow="autoplay"></iframe>
         </div>
       </div>
