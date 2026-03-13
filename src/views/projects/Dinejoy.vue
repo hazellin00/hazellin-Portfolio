@@ -92,7 +92,6 @@
         </div>
       </div>
 
-      
       <!-- PILLAR 1: BACKEND -->
       <section class="case-process">
         <p class="eyebrow">Key Pillar 1</p>
@@ -547,6 +546,17 @@ h1, h2, h3 {
 /* EMBED */
 .case-embed { margin-bottom: 3rem; }
 .case-embed h2 { margin: 0.2rem 0 1rem; }
+
+.embed-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 3rem;
+}
+
+.frame {
+  display: flex;
+  justify-content: center;
+}
 
 /* PLACEHOLDER BOXES */
 .placeholder-box {
