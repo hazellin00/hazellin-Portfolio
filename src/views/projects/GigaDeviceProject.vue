@@ -80,14 +80,31 @@
         </div>
       </section>
 
-      <div class="embed-wrapper">
-    <embed
-    src="/hazellin-Portfolio/giga_device/GigaDevice+Semiconductor+Inc-e-Commerce+Marketing+and+Logistics+Intern+(1).pdf" width="100%" height="480">
-    </embed>
-</div>
+      <section class="case-gallery">
+      <p class="eyebrow">Data Visuals</p>
+      <h2>GigaDevice Internship in Summary</h2>
+      <div class="gallery-grid">
+        <figure class="zoom-card">
+          <img :src="base + 'gigadevice/giga-1.jpg'" alt="GigaDevice Internship Slide 1" />
+        </figure>
+        <figure class="zoom-card">
+          <img :src="base + 'gigadevice/giga-2.jpg'" alt="GigaDevice Internship Slide 2" />
+        </figure>
+        <figure class="zoom-card">
+          <img :src="base + 'gigadevice/giga-3.jpg'" alt="GigaDevice Internship Slide 3" />
+        </figure>
+        <figure class="zoom-card">
+          <img :src="base + 'gigadevice/giga-4.jpg'" alt="GigaDevice Internship Slide 4" />
+        </figure>
+      </div>
+      </section>
     </main>
   </div>
 </template>
+
+<script setup>
+const base = import.meta.env.BASE_URL
+</script>
 
 <style scoped>
 .page-container {
@@ -294,15 +311,47 @@ h3 {
   margin-bottom: 0.25rem;
 }
 
-.embed-wrapper {
-  margin-top: 1rem;
-  padding: 1.1rem 1.2rem;
-  border-radius: 18px;
-  background: #ffffff;
-  border: 1px dashed rgba(148, 163, 184, 0.8);
-  font-size: 0.85rem;
-  color: #6b7280;
+/* =========================
+   Gallery (Charts)
+========================= */
+.case-gallery {
+  margin-bottom: 3rem;
 }
+
+.gallery-grid {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery-grid figure {
+  flex: 0 0 80vw;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 900px) {
+  .gallery-grid figure {
+    flex: 0 0 calc(50% - 0.75rem);
+    max-width: calc(50% - 0.75rem);
+  }
+}
+
+.zoom-card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(148, 163, 184, 0.5);
+}
+
+.zoom-card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 
 @media (min-width: 900px) {
   .zoom-card {
