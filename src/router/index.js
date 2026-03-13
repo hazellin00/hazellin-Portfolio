@@ -76,6 +76,11 @@ const router = createRouter({
       component: () => import("../views/projects/AITrackProject.vue"),
     },
     {
+      path: "/projects/dinejoy",
+      name: "dinejoy",
+      component: () => import("../views/projects/Dinejoy.vue"),
+    },
+    {
       path: "/projects/master-thesis",
       name: "master-thesis",
       component: () => import("../views/projects/MasterThesisProject.vue"),

@@ -17,19 +17,27 @@
         <h2>Two Core Professional Paths</h2>
 
         <div class="paths-grid">
-          <a href="#cases-marketing" class="path-card">
+          <div class="path-card">
             <div class="path-icon">📊</div>
             <h3>Marketing & Branding Strategy &amp; Analytics</h3>
             <p>Campaigns, dashboards, product &amp; brand marketing.</p>
+            <div class="case-links">
+              <router-link to="/cases/andertons">Andertons</router-link>
+              <router-link to="/cases/hultprize">Hult Prize</router-link>
+            </div>
             <span class="path-tag">2 cases</span>
-          </a>
+          </div>
 
-          <a href="#cases-tech" class="path-card">
+          <div class="path-card">
             <div class="path-icon">🤖</div>
             <h3>Tech &amp; AI-Driven Growth</h3>
             <p>Using software, data &amp; AI tools to support growth.</p>
+            <div class="case-links">
+              <router-link to="/cases/david-sobey">David Sobey</router-link>
+              <router-link to="/cases/zarastus">Zarastus</router-link>
+            </div>
             <span class="path-tag">2 cases</span>
-          </a>
+          </div>
         </div>
       </section>
 
@@ -277,6 +285,26 @@ p { font-size: 1.05rem; }
   margin: 0;
   font-size: 1rem;
   color: #6b7280;
+}
+
+.case-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.8rem;
+  margin-top: 0.4rem;
+}
+
+.case-links a {
+  font-size: 0.88rem;
+  color: #5b8dff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(91, 141, 255, 0.3);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.case-links a:hover {
+  color: #c15b28;
+  border-color: #c15b28;
 }
 
 .path-tag {

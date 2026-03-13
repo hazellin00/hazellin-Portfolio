@@ -17,26 +17,40 @@
         <h2>Three Core Professional Paths</h2>
 
         <div class="paths-grid">
-          <a href="#cases-marketing" class="path-card">
+          <div class="path-card">
             <div class="path-icon">📊</div>
             <h3>Event Marketing & Branding Analytics</h3>
             <p>Campaigns, dashboards, product &amp; brand marketing.</p>
+            <div class="case-links">
+              <router-link to="/projects/pacific-climate">Pacific Climate</router-link>
+              <router-link to="/projects/game-modular">Game Modular</router-link>
+              <router-link to="/projects/golden-eagle">Golden Eagle ESG</router-link>
+              <router-link to="/projects/modular-agency">Modular × Acer</router-link>
+            </div>
             <span class="path-tag">4 cases</span>
-          </a>
+          </div>
 
-          <a href="#cases-tech" class="path-card">
+          <div class="path-card">
             <div class="path-icon">🤖</div>
             <h3>Tech &amp; AI-Driven Growth</h3>
             <p>Using software, data &amp; AI tools to support growth.</p>
-            <span class="path-tag">1 case</span>
-          </a>
+            <div class="case-links">
+              <router-link to="/projects/ai-track">AI Track</router-link>
+              <router-link to="/projects/dinejoy">Dine Joy</router-link>
+              <router-link to="/projects/master-thesis">Master Thesis</router-link>
+            </div>
+            <span class="path-tag">3 cases</span>
+          </div>
 
-          <a href="#cases-logistics" class="path-card">
+          <div class="path-card">
             <div class="path-icon">📦</div>
             <h3>Logistics &amp; Operations</h3>
             <p>Execution, coordination and on-the-ground problem solving.</p>
+            <div class="case-links">
+              <router-link to="/projects/gigadevice">GigaDevice Semiconductor</router-link>
+            </div>
             <span class="path-tag">1 case</span>
-          </a>
+          </div>
         </div>
       </section>
 
@@ -69,13 +83,17 @@
             <img src="@/assets/images/ai-track-home.jpg" alt="AI Track">
           </router-link>
 
-          <router-link class="float-img size-medium pos-g" to="/projects/master-thesis">
+          <router-link class="float-img size-medium pos-g" to="/projects/dinejoy">
+            <img :src="base + 'dinejoy/01.jpg'" alt="Dinejoy">
+          </router-link>
+
+          <router-link class="float-img size-medium pos-h" to="/projects/master-thesis">
             <img src="@/assets/images/master-thesis-1.jpg" alt="Master Thesis">
           </router-link>
         </section>
       </section>
 
-    <div class="footer1" style="margin-bottom: 50px;">
+    <div class="float-img size-medium pos-i" style="margin-bottom: 50px;">
       <router-link to="/cases" class="btn primary">Learn More on Cases</router-link>
     </div>
   </main>
@@ -83,6 +101,7 @@
 
 <script setup>
 import { onMounted, onUnmounted } from 'vue';
+const base = import.meta.env.BASE_URL
 
 const handleScroll = () => {
   const img = document.querySelector('.hero-img');
@@ -257,6 +276,26 @@ p { font-size: 1.05rem; }
   color: #6b7280;
 }
 
+.case-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.8rem;
+  margin-top: 0.4rem;
+}
+
+.case-links a {
+  font-size: 0.88rem;
+  color: #5b8dff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(91, 141, 255, 0.3);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.case-links a:hover {
+  color: #c15b28;
+  border-color: #c15b28;
+}
+
 .path-tag {
   margin-top: 0.8rem;
   font-size: 0.9rem;
@@ -317,6 +356,9 @@ p { font-size: 1.05rem; }
 .pos-e { top: 950px; left: 50%; }
 .pos-f { top: 1200px; left: 10%; }
 .pos-g { top: 1750px; left: 50%; }
+.pos-h { top: 1800px; left: 10%; }
+.pos-i { top: 3800px; left: 40%; }
+
 
 .footer1 {
   margin-top: 3rem;
