@@ -81,6 +81,10 @@
             <img src="@/assets/images/ai-track-home.jpg" alt="AI Track">
           </router-link>
 
+          <router-link class="float-img size-medium pos-g" to="/projects/dinejoy">
+            <img :src="base + 'dinejoy/01.jpg'" alt="Dinejoy">
+          </router-link>
+
           <router-link class="float-img size-medium pos-g" to="/projects/master-thesis">
             <img src="@/assets/images/master-thesis-1.jpg" alt="Master Thesis">
           </router-link>
@@ -95,6 +99,7 @@
 
 <script setup>
 import { onMounted, onUnmounted } from 'vue';
+const base = import.meta.env.BASE_URL
 
 const handleScroll = () => {
   const img = document.querySelector('.hero-img');

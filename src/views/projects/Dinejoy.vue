@@ -171,24 +171,35 @@
         <p class="eyebrow">Behind the Scenes</p>
         <h2>Presenting at the Demo Day</h2>
         <p class="pillar-intro">"Sharing the logic with a room full of peers. My favorite part was explaining the 'Map-List Sync' — seeing that 'aha!' moment when they realized the map wasn't just moving, it was thinking."</p>
-
         <div class="gallery-grid">
-          <!-- INSERT: photos of you presenting, classroom, demo screenshots -->
-          <div class="placeholder-box">[ Insert photo — presenting at the mic ]</div>
-          <div class="placeholder-box">[ Insert photo — classroom / monitors ]</div>
-          <div class="placeholder-box">[ Insert screenshot — map view ]</div>
-          <div class="placeholder-box">[ Insert screenshot — booking flow ]</div>
+          <figure class="zoom-card">
+            <img :src="base + 'dinejoy/01.jpg'" alt="Demo Day photo 1" />
+          </figure>
+          <figure class="zoom-card">
+            <img :src="base + 'dinejoy/02.jpg'" alt="Demo Day photo 2" />
+          </figure>
+          <figure class="zoom-card">
+            <img :src="base + 'dinejoy/03.jpg'" alt="Demo Day photo 3" />
+          </figure>
+          <figure class="zoom-card">
+            <img :src="base + 'dinejoy/04.jpg'" alt="Demo Day photo 4" />
+          </figure>
+          <figure class="zoom-card">
+            <img :src="base + 'dinejoy/05.jpg'" alt="Demo Day photo 5" />
+          </figure>
+          <figure class="zoom-card">
+            <img :src="base + 'dinejoy/06.jpg'" alt="Demo Day photo 6" />
+          </figure>
         </div>
       </section>
 
       <!-- VIDEO INSERT AREA -->
-      <section class="case-embed">
-        <p class="eyebrow">Demo</p>
-        <h2>App Walkthrough</h2>
-        <div class="placeholder-box tall">
-          [ Insert demo video here ]
+      <div class="embed-wrapper">
+        <div class="frame">
+          <iframe src="https://drive.google.com/file/d/1Ziz3Oxk9QqjumwHs_9K6V3EmhsLGLgiz/view?usp=sharing" width="800"
+            height="500" allow="autoplay"></iframe>
         </div>
-      </section>
+      </div>
 
       <!-- REFLECTION -->
       <section class="reflection-section">
@@ -206,6 +217,10 @@
     </main>
   </div>
 </template>
+
+<script setup>
+const base = import.meta.env.BASE_URL
+</script>
 
 <style scoped>
 .page-container {
@@ -367,6 +382,47 @@ h1, h2, h3 {
 .summary-chip p { margin: 0; }
 .summary-chip ul { margin: 0; padding-left: 1.1rem; }
 .summary-chip li { margin-bottom: 0.25rem; }
+
+/* GALLERY */
+.case-gallery { margin-bottom: 3rem; }
+.case-gallery h2 { margin: 0.2rem 0 1rem; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.4rem;
+}
+
+.zoom-card {
+  position: relative;
+  cursor: pointer;
+}
+
+.zoom-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.zoom-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.zoom-card:hover::before {
+  opacity: 1;
+}
+
+.zoom-card img:hover {
+  transform: scale(1.05);
+}
 
 /* PROCESS (pillars) */
 .case-process { margin-bottom: 3rem; }
