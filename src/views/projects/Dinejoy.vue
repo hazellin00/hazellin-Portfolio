@@ -84,6 +84,15 @@
         </div>
       </section>
 
+      <!-- VIDEO INSERT AREA -->
+      <div class="embed-wrapper">
+        <div class="frame">
+          <iframe src="https://drive.google.com/file/d/1Ziz3Oxk9QqjumwHs_9K6V3EmhsLGLgiz/preview" width="800"
+            height="500" allow="autoplay"></iframe>
+        </div>
+      </div>
+
+      
       <!-- PILLAR 1: BACKEND -->
       <section class="case-process">
         <p class="eyebrow">Key Pillar 1</p>
@@ -136,14 +145,7 @@
         </div>
       </section>
 
-      <!-- VIDEO INSERT AREA -->
-      <div class="embed-wrapper">
-        <div class="frame">
-          <iframe src="https://drive.google.com/file/d/1Ziz3Oxk9QqjumwHs_9K6V3EmhsLGLgiz/preview" width="800"
-            height="500" allow="autoplay"></iframe>
-        </div>
-      </div>
-      
+
       <!-- PILLAR 3: DATABASE -->
       <section class="case-process db-section">
         <p class="eyebrow">The Foundation</p>
