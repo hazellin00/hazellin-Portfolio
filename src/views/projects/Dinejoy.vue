@@ -4,8 +4,8 @@
 
       <!-- HERO -->
       <section class="project-hero">
-        <div class="project-hero-media media-placeholder">
-          <img :src="base + 'dinejoy/homepage.png'" alt="Demo Day photo 1" />
+        <div class="project-hero-media">
+          <img :src="base + 'dinejoy/homepage.png'" alt="DINE JOY homepage" />
         </div>
         <div class="project-hero-text">
           <p class="breadcrumb">
@@ -14,11 +14,10 @@
             <span class="crumb">Full-Stack</span>
           </p>
           <span class="path-pill">Tech &amp; AI-Driven Growth</span>
-          <h1>DINE JOY — Data-Driven Gastronomy Platform</h1>
+          <h1>DINE JOY — 智慧餐廳系統</h1>
           <p class="project-subtitle">
-            "Bridging the gap between 4,000+ raw data points and a seamless user intent."
-            Built a full-stack restaurant booking platform by transforming messy open data from the Taiwan Tourism
-            Administration into a high-integrity, AI-enhanced data engine.
+            A full-stack restaurant platform that goes beyond keyword search — understanding natural language intent
+            to match users with restaurants by vibe, mood, and occasion across Taiwan.
           </p>
           <dl class="project-meta">
             <div>
@@ -27,15 +26,15 @@
             </div>
             <div>
               <dt>When</dt>
-              <dd>2026</dd>
+              <dd>2025/12 – 2026/06</dd>
             </div>
             <div>
               <dt>Tech Stack</dt>
-              <dd>Python · FastAPI · MySQL · Vue 3 · Pinia · Leaflet.js · Ollama LLM</dd>
+              <dd>Python · FastAPI · MySQL · TiDB · Vue 3 · Pinia · Leaflet.js · ChromaDB · text2vec · CLIP · LLM</dd>
             </div>
             <div>
               <dt>Deliverables</dt>
-              <dd>RESTful API · Vue 3 Frontend · Automated Data Pipeline</dd>
+              <dd>RESTful API · Vue 3 Frontend · AI Semantic Search Engine · Automated Data Pipeline</dd>
             </div>
           </dl>
           <div class="hero-actions">
@@ -44,111 +43,180 @@
         </div>
       </section>
 
-      <!-- OVERVIEW -->
+      <!-- BUSINESS PAIN POINTS -->
       <section class="project-summary">
         <div class="summary-main">
-          <p class="eyebrow">Project Overview</p>
-          <h2>A Reliable Data Engine Behind a Seamless Experience</h2>
-          <p class="summary-tagline">The goal wasn't just to build a UI — it was to build a reliable data engine.</p>
+          <p class="eyebrow">Business Pain Points</p>
+          <h2>Taiwan's Domestic Tourism Needs a Smarter Discovery Tool</h2>
+          <p class="summary-tagline">Traditional search can't understand "氛圍" (vibe) or natural language — DINE JOY fills that gap.</p>
           <div class="summary-highlight">
             <span class="summary-label">Context</span>
             <p>
-              Most restaurant apps look pretty but fail on data depth. I took 4,000+ messy, "thin" data points from the
-              Taiwan Tourism Administration and transformed them into a high-integrity booking platform — applying AI
-              enrichment, smart categorization, and probability-based pricing to fill the gaps the raw data left behind.
+              The goal wasn't just to build a UI — it was to build a reliable data ML semantic engine. <br> Most restaurant apps look
+              pretty but fail on data depth. Starting with 100 restaurants as a prototype, I took 4,000+ messy,
+              "thin" data points from the <strong>Taiwan Tourism Administration (台灣觀光局)</strong> and transformed 100 of them into a high-integrity
+              booking platform.</br> 
+              <p>Applying AI enrichment, smart categorization, and probability-based pricing to fill
+              the gaps the raw data left behind.</p>
+              
+            </p>
+            <p style="margin-top: 0.7rem;">
+              Taiwan's domestic tourism spending is only <strong>29%</strong> of the total travel market, with
+              per-capita spend less than 1/25 of outbound tourism. Average trip length has dropped to a 10-year low
+              of <strong>1.39 days</strong>. Existing platforms rely on rigid keyword filters that fail to capture
+              intent. DINE JOY acts like a knowledgeable friend — understanding what you mean, not just what you type.
             </p>
           </div>
         </div>
         <div class="summary-side">
           <article class="summary-chip">
             <h3>My Role</h3>
-            <p>Designed and built the full stack — from data pipeline to REST API to Vue 3 frontend — and presented the
-              architecture to peers and instructors.</p>
+            <p>Designed and built the full stack — data pipeline, REST API, Vue 3 frontend, and the AI semantic search engine — and presented the architecture at demo day.</p>
           </article>
           <article class="summary-chip">
             <h3>Key Deliverables</h3>
             <ul>
-              <li>AI-enhanced data pipeline (Pandas + Ollama LLM)</li>
-              <li>FastAPI backend with Service Component Layer</li>
-              <li>Vue 3 frontend with Pinia state management</li>
-              <li>Map-List sync via Leaflet.js</li>
+              <li>AI semantic search (text2vec + ChromaDB + CrossEncoder)</li>
+              <li>Image-to-text tagging pipeline (Chinese-CLIP)</li>
+              <li>FastAPI backend with service component layer</li>
+              <li>Map-List sync via Leaflet.js + reservation flow</li>
             </ul>
           </article>
           <article class="summary-chip">
             <h3>Outcome</h3>
             <ul>
-              <li>A production-ready platform serving 4,000+ enriched restaurant records.</li>
-              <li>Presented live to a full classroom — the Map-List Sync logic earned the most questions.</li>
+              <li>4,000+ enriched restaurant records searchable by intent</li>
+              <li>Semantic search gain score consistently above 0.4</li>
+              <li>Presented live — Map-List Sync logic earned the most questions</li>
             </ul>
           </article>
         </div>
       </section>
 
-      <!-- VIDEO INSERT AREA -->
-      <div class="embed-wrapper">
-        <div class="frame">
-          <iframe src="https://drive.google.com/file/d/1Ziz3Oxk9QqjumwHs_9K6V3EmhsLGLgiz/preview" width="800"
-            height="500" allow="autoplay"></iframe>
-        </div>
-      </div>
-
-      <!-- PILLAR 1: BACKEND -->
-      <section class="case-process">
-        <p class="eyebrow">Key Pillar 1</p>
-        <h2>The Data "Glow-Up" — Backend Pipeline</h2>
-        <p class="pillar-intro">I didn't just import a CSV. I built a pipeline to ensure the platform felt "alive" even where the original data was lacking.</p>
-
-        <div class="process-steps">
-          <div class="step">
-            <div class="step-number">AI</div>
-            <h3>AI-Enhanced Descriptions</h3>
-            <p>Used <strong>Pandas</strong> to identify ~200 entries with "thin" descriptions, then leveraged <strong>Ollama (LLM)</strong> to generate natural, human-like restaurant intros — at zero API cost.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">IMG</div>
-            <h3>Smart Categorization</h3>
-            <p>Developed a mapping script to assign high-quality, relevant images based on category tags (e.g., "Japanese," "Romantic") using local directory mapping — no external APIs needed.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">$$$</div>
-            <h3>Probability-Based Pricing</h3>
-            <p>Since raw data lacked pricing, implemented a distribution algorithm: <strong>40% Economy · 40% Mid-range · 20% Fine Dining</strong> — simulating a realistic market spread.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">API</div>
-            <h3>Service Component Layer</h3>
-            <p>Moved beyond basic scripts to keep REST API endpoints clean while complex search logic (LIKE fuzzy matching + coordinate bounding) stays encapsulated in the service layer.</p>
+      <!-- PRESENTATION EMBED -->
+      <section class="placeholder-section">
+        <p class="eyebrow">Presentation</p>
+        <div class="embed-wrapper">
+          <div class="frame">
+            <iframe
+              src="https://drive.google.com/file/d/1uoVBWoabAaOTfdfdzBdTa42BWuYMNdX5/preview"
+              width="800"
+              height="500"
+              allow="autoplay"
+              allowfullscreen
+            ></iframe>
           </div>
         </div>
       </section>
 
-      <!-- PILLAR 2: FRONTEND UX -->
+      <!-- DEMO VIDEO -->
+      <section class="placeholder-section">
+        <p class="eyebrow">Demo Video</p>
+        <div class="embed-wrapper">
+          <div class="frame">
+            <iframe
+              src="https://drive.google.com/file/d/1QMCnus-28H5e-hH0hnrHclzvalwYLLZu/preview"
+              width="800"
+              height="500"
+              allow="autoplay"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- PILLAR 1: TRADITIONAL VS SEMANTIC -->
+      <section class="case-process">
+        <p class="eyebrow">Key Pillar 1</p>
+        <h2>Traditional Search vs. AI Semantic Search</h2>
+        <p class="pillar-intro">Traditional platforms lock you into dropdowns: city → district → category → price. DINE JOY reads your intent directly from natural language.</p>
+
+        <div class="compare-grid">
+          <div class="compare-card old">
+            <div class="compare-label">Traditional</div>
+            <h3>SQL Fuzzy Matching</h3>
+            <p>User selects county → district → tag. System runs <code>LIKE %親子%</code> against DB tags. Only returns exact matches — no vibe, no context.</p>
+            <div class="compare-steps">
+              <span>① Lock region</span>
+              <span>② Match tag</span>
+              <span>③ Filter price</span>
+            </div>
+          </div>
+          <div class="compare-arrow">→</div>
+          <div class="compare-card new">
+            <div class="compare-label">DINE JOY</div>
+            <h3>Semantic Vector Search</h3>
+            <p>User types "新北市適合情侶約會餐廳推薦" in natural language. System understands intent, returns top 5 semantically matched restaurants.</p>
+            <div class="compare-steps">
+              <span>① Encode query</span>
+              <span>② Vector recall</span>
+              <span>③ Re-rank</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PILLAR 2: AI PIPELINE -->
       <section class="case-outcomes">
         <p class="eyebrow">Key Pillar 2</p>
-        <h2>Intent-Based UX — Frontend Logic</h2>
-        <p class="pillar-intro">The most frustrating part of map-based apps is when the map "flies away" or reloads unnecessarily. I focused on respecting user intent.</p>
+        <h2>The ML Semantic Search Pipeline</h2>
+        <p class="pillar-intro">Two stages working together: a fast bi-encoder for recall, and a precise CrossEncoder for re-ranking — balancing speed and accuracy.</p>
 
         <div class="outcome-grid">
           <div class="outcome-card">
-            <h3>Smart Map-List Sync</h3>
-            <p>The map stays locked if a user manually selects a city. It only switches to "Coordinate-Boundary Search" when the user explicitly clears filters — respecting their focus.</p>
+            <h3>Image → Visual Tags (Chinese-CLIP)</h3>
+            <p>Each restaurant photo is classified into ENV / Food categories using cosine similarity. Tags like "浪漫約會", "文青設計感" are injected into the text description — filling the gap raw data leaves behind.</p>
           </div>
           <div class="outcome-card">
-            <h3>Performance Capping</h3>
-            <p>Capped map pins at <strong>150</strong> and list results at <strong>20</strong> with a "Show More" trigger, preventing browser lag during heavy data fetches.</p>
+            <h3>NLP Pipeline (CKIP + KeyBERT)</h3>
+            <p>CKIP (Academia Sinica) handles deep tokenization and POS tagging to extract noun features. KeyBERT identifies signature dishes by BERT weight. Together they compress each description to its 3 most representative terms.</p>
           </div>
           <div class="outcome-card">
-            <h3>One-Click Conversions</h3>
-            <p>Using <strong>Pinia</strong> for state management, the app auto-fills member data into the reservation form — reducing friction from discovery to booking.</p>
+            <h3>Vector Encoding (text2vec)</h3>
+            <p>Refined descriptions are converted to 768d vectors using <strong>shibing624/text2vec-base-chinese</strong>. OpenCC Traditional→Simplified conversion boosted raw search gain from &lt;0.3 to consistently above 0.4.</p>
+          </div>
+          <div class="outcome-card">
+            <h3>Two-Stage Search</h3>
+            <p><strong>Stage 1 (bi-encoder):</strong> ChromaDB vector recall returns Top 20–50 candidates in milliseconds. <strong>Stage 2 (CrossEncoder / BGE-Reranker):</strong> Re-scores each pair for precision. Score &lt;0.30 = no result returned.</p>
           </div>
         </div>
       </section>
 
+      <!-- PILLAR 3: FEATURES -->
+      <section class="case-process">
+        <p class="eyebrow">Key Pillar 3</p>
+        <h2>Platform Features</h2>
+        <p class="pillar-intro">Four integrated modules covering the full journey — from discovery to reservation and review.</p>
 
-      <!-- PILLAR 3: DATABASE -->
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">01</div>
+            <h3>Member Management</h3>
+            <p>Login / register / profile edit / password reset. Member data auto-fills reservation forms via Pinia state management.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">02</div>
+            <h3>Restaurant Discovery</h3>
+            <p>Semantic search + Leaflet map with 150-pin cap for performance. Marker clustering when density is high. Map-region search triggers when no city is selected.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">03</div>
+            <h3>AI Review Intelligence</h3>
+            <p>Latest 5 Google Maps reviews → LLM analysis → <strong>golden combo</strong> (must-order dish pairing) + <strong>warning tips</strong> shown directly on search results.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">04</div>
+            <h3>Reservation Flow</h3>
+            <p>B2C auto-confirm model. User submits → system writes to DB → status immediately set to Confirmed. Future: POS API integration via pre-reserved <code>pos_system_id</code> field.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DB DESIGN -->
       <section class="case-process db-section">
         <p class="eyebrow">The Foundation</p>
-        <h2>Database Integrity — Audit Trail, Not Just Storage</h2>
+        <h2>Database Design — Built to Scale</h2>
+        <p class="pillar-intro">Static and dynamic data are separated. Expansion interfaces are reserved from day one — no schema rebuild needed when POS integration is added.</p>
 
         <div class="db-table">
           <div class="db-row db-header">
@@ -159,49 +227,40 @@
           <div class="db-row">
             <span><strong>Relational Integrity</strong></span>
             <span><code>ON DELETE CASCADE</code></span>
-            <span>Ensures when a restaurant is removed, its media assets are wiped — preventing "ghost data."</span>
+            <span>When a restaurant is removed, its media assets are wiped — no ghost data.</span>
           </div>
           <div class="db-row">
             <span><strong>Audit Protection</strong></span>
             <span><code>ON DELETE RESTRICT</code></span>
-            <span>Prevents deleting a user if they have active reservations — protecting business transaction history.</span>
+            <span>Prevents deleting a user with active reservations — protecting transaction history.</span>
           </div>
           <div class="db-row">
             <span><strong>Concurrency Control</strong></span>
             <span><code>Unique Constraint</code></span>
-            <span>A composite key on <code>(user_id, booking_time)</code> prevents double-booking at the database level.</span>
+            <span>Composite key on <code>(user_id, booking_time)</code> prevents double-booking at DB level.</span>
+          </div>
+          <div class="db-row">
+            <span><strong>POS Expansion Slot</strong></span>
+            <span><code>pos_system_id (NULL)</code></span>
+            <span>Pre-reserved field for future merchant POS integration — no migration needed.</span>
           </div>
         </div>
       </section>
 
-      <!-- MEDIA: INSERT AREA -->
+      <!-- GALLERY -->
       <section class="case-gallery">
         <p class="eyebrow">Behind the Scenes</p>
-        <h2>Presenting at the Demo Day</h2>
-        <p class="pillar-intro">"Sharing the logic with a room full of peers. My favorite part was explaining the 'Map-List Sync' — seeing that 'aha!' moment when they realized the map wasn't just moving, it was thinking."</p>
+        <h2>Presenting at Demo Day</h2>
+        <p class="pillar-intro">"Sharing the logic with a room full of peers. My favorite part was explaining the Map-List Sync — seeing that 'aha!' moment when they realized the map wasn't just moving, it was thinking."</p>
         <div class="gallery-grid">
-          <figure class="zoom-card">
-            <img :src="base + 'dinejoy/01.jpg'" alt="Demo Day photo 1" />
-          </figure>
-          <figure class="zoom-card">
-            <img :src="base + 'dinejoy/02.jpg'" alt="Demo Day photo 2" />
-          </figure>
-          <figure class="zoom-card">
-            <img :src="base + 'dinejoy/03.jpg'" alt="Demo Day photo 3" />
-          </figure>
-          <figure class="zoom-card">
-            <img :src="base + 'dinejoy/04.jpg'" alt="Demo Day photo 4" />
-          </figure>
-          <figure class="zoom-card">
-            <img :src="base + 'dinejoy/05.jpg'" alt="Demo Day photo 5" />
-          </figure>
-          <figure class="zoom-card">
-            <img :src="base + 'dinejoy/06.jpg'" alt="Demo Day photo 6" />
-          </figure>
+          <figure class="zoom-card"><img :src="base + 'dinejoy/01.jpg'" alt="Demo Day photo 1" /></figure>
+          <figure class="zoom-card"><img :src="base + 'dinejoy/02.jpg'" alt="Demo Day photo 2" /></figure>
+          <figure class="zoom-card"><img :src="base + 'dinejoy/03.jpg'" alt="Demo Day photo 3" /></figure>
+          <figure class="zoom-card"><img :src="base + 'dinejoy/04.jpg'" alt="Demo Day photo 4" /></figure>
+          <figure class="zoom-card"><img :src="base + 'dinejoy/05.jpg'" alt="Demo Day photo 5" /></figure>
+          <figure class="zoom-card"><img :src="base + 'dinejoy/06.jpg'" alt="Demo Day photo 6" /></figure>
         </div>
       </section>
-
-      
 
       <!-- REFLECTION -->
       <section class="reflection-section">
@@ -385,45 +444,122 @@ h1, h2, h3 {
 .summary-chip ul { margin: 0; padding-left: 1.1rem; }
 .summary-chip li { margin-bottom: 0.25rem; }
 
-/* GALLERY */
-.case-gallery { margin-bottom: 3rem; }
-.case-gallery h2 { margin: 0.2rem 0 1rem; }
+/* PLACEHOLDERS / EMBED */
+.placeholder-section {
+  margin-bottom: 2.5rem;
+}
 
-.gallery-grid {
+.pres-link-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.6rem;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(193, 91, 40, 0.25);
+  box-shadow: 0 12px 30px rgba(148, 163, 184, 0.35);
+  text-decoration: none;
+  color: #020617;
+  transition: box-shadow 0.18s, transform 0.12s;
+}
+
+.pres-link-card:hover {
+  box-shadow: 0 18px 45px rgba(193, 91, 40, 0.2);
+  transform: translateY(-2px);
+}
+
+.pres-link-icon { font-size: 1.6rem; }
+
+.pres-link-text {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.pres-link-arrow {
+  font-size: 1.2rem;
+  color: #c15b28;
+  font-weight: 700;
+}
+
+.embed-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.frame {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.frame iframe {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 18px;
+  border: none;
+  box-shadow: 0 18px 45px rgba(148, 163, 184, 0.4);
+}
+
+/* COMPARE */
+.compare-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1.4rem;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1.4rem;
 }
 
-.zoom-card {
+.compare-arrow {
+  font-size: 2rem;
+  color: #c15b28;
+  text-align: center;
+}
+
+.compare-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.3rem 1.4rem 1.5rem;
+  box-shadow: 0 18px 45px rgba(148, 163, 184, 0.4);
   position: relative;
-  cursor: pointer;
 }
 
-.zoom-card img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+.compare-card.old { border-top: 4px solid #94a3b8; }
+.compare-card.new { border-top: 4px solid #c15b28; }
+
+.compare-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 0.4rem;
 }
 
-.zoom-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.compare-card.new .compare-label { color: #c15b28; }
+
+.compare-card h3 { margin: 0 0 0.4rem; font-size: 1rem; }
+.compare-card p { margin: 0 0 0.8rem; font-size: 0.88rem; color: #4b5563; line-height: 1.6; }
+.compare-card code { background: #f3f4f6; padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.82rem; }
+
+.compare-steps {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
-.zoom-card:hover::before {
-  opacity: 1;
+.compare-steps span {
+  background: #f3f4f6;
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.78rem;
+  color: #374151;
 }
 
-.zoom-card img:hover {
-  transform: scale(1.05);
+.compare-card.new .compare-steps span {
+  background: #fff1eb;
+  color: #c15b28;
 }
 
 /* PROCESS (pillars) */
@@ -469,6 +605,7 @@ h1, h2, h3 {
 
 .step h3 { margin: 0 0 0.3rem; font-size: 1rem; }
 .step p { margin: 0; font-size: 0.88rem; color: #4b5563; line-height: 1.6; }
+.step code { background: #f3f4f6; padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.82rem; }
 
 /* OUTCOMES */
 .case-outcomes { margin-bottom: 3rem; }
@@ -476,7 +613,7 @@ h1, h2, h3 {
 
 .outcome-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.4rem;
 }
 
@@ -538,43 +675,13 @@ h1, h2, h3 {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
   margin-top: 1.2rem;
 }
 
-/* EMBED */
-.case-embed { margin-bottom: 3rem; }
-.case-embed h2 { margin: 0.2rem 0 1rem; }
-
-.embed-wrapper {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0 3rem;
-}
-
-.frame {
-  display: flex;
-  justify-content: center;
-}
-
-/* PLACEHOLDER BOXES */
-.placeholder-box {
-  background: rgba(193, 91, 40, 0.05);
-  border: 2px dashed rgba(193, 91, 40, 0.3);
-  border-radius: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #c15b28;
-  font-size: 0.9rem;
-  font-family: "Cutive Mono", monospace;
-  min-height: 200px;
-  text-align: center;
-  padding: 1.5rem;
-}
-
-.placeholder-box.tall { min-height: 400px; }
+.zoom-card { position: relative; cursor: pointer; margin: 0; }
+.zoom-card img { width: 100%; height: auto; object-fit: cover; border-radius: 12px; display: block; }
 
 /* REFLECTION */
 .reflection-section { margin-bottom: 3rem; }
@@ -598,10 +705,13 @@ h1, h2, h3 {
   .project-summary { grid-template-columns: 1fr; }
   .db-row { grid-template-columns: 1fr; gap: 0.3rem; }
   .db-header span:nth-child(2), .db-header span:nth-child(3) { display: none; }
-  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .compare-grid { grid-template-columns: 1fr; }
+  .compare-arrow { transform: rotate(90deg); }
 }
 
 @media (max-width: 768px) {
   .project-page { padding-inline: 1.25rem; }
+  .gallery-grid { grid-template-columns: 1fr; }
 }
 </style>
