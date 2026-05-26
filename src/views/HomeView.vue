@@ -95,23 +95,23 @@
       <div class="industry-scroll-container">
         <div class="industry-scroll-card">
           <img src="@/assets/images/giga-logo.png" alt="GigaDevice" />
-          <a href="/hazellin-Portfolio/docs/giga-device-intern.pdf" target="_blank">Read Bio →</a>
+          <a href="https://drive.google.com/file/d/1T1Jei_63ZcQrs-LMtwnBZR9o4itAxtoP/view?usp=sharing" target="_blank">Read Bio →</a>
         </div>
         <div class="industry-scroll-card">
           <img src="@/assets/images/taise-logo.jpg" alt="TAISE" />
-          <a href="/hazellin-Portfolio/docs/taise-diplomatic-dinner.pdf" target="_blank">Read Bio →</a>
+          <a href="https://drive.google.com/file/d/1Kr_-vx3gbAdhLObhgi1UZT3XMkgttVdk/view?usp=sharing" target="_blank">Read Bio →</a>
         </div>
         <div class="industry-scroll-card">
           <img src="@/assets/images/line-logo.jpeg" alt="LINE" />
-          <a href="/hazellin-Portfolio/docs/line-internship.pdf" target="_blank">Read Bio →</a>
+          <a href="https://drive.google.com/file/d/13hYO7UqeVXfAwydJaRWLW44vGf4L_u5n/view?usp=sharing" target="_blank">Read Bio →</a>
         </div>
         <div class="industry-scroll-card">
           <img src="@/assets/images/modular-logo.jpeg" alt="Modular" />
-          <a href="/hazellin-Portfolio/docs/modular-acer-scooter.pdf" target="_blank">Read Bio →</a>
+          <a href="https://drive.google.com/file/d/1BnkHqUyigOAanuyq3jehW70dIfXdtBO3/view?usp=sharing"target="_blank">Read Bio →</a>
         </div>
         <div class="industry-scroll-card">
           <img src="@/assets/images/decathlon-logo.jpeg" alt="Decathlon" />
-          <a href="/hazellin-Portfolio/docs/decathlon-sales.pdf" target="_blank">Read Bio →</a>
+          <a href="https://drive.google.com/file/d/1EdlT49FUQdijb6daiYd2Y19mGh_ef5vK/view?usp=sharing" target="_blank">Read Bio →</a>
         </div>
       </div>
     </section>
